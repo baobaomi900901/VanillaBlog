@@ -1,0 +1,7 @@
+{
+  "name": "VanillaBlog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:baobaomi900901/VanillaBlog.git",
+  "license": "MIT"
+}
