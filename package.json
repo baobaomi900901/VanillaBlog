@@ -3,5 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:baobaomi900901/VanillaBlog.git",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "serve": "cross-env NODE_ENV=development concurrently -k \"npm run create-server\" \"npm run watch\" ",
+    "build": "cross-env NODE_ENV=production npm run build:css",
+    "create-server": "http-server -o /index.html -c-0 -p 9900 ./src",
+    "watch": "postcss src/assets/style/index.css -o src/dist/index.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^6.4.0",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.11",
+    "http-server": "^14.0.0",
+    "postcss-cli": "^9.0.2",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.19"
+  }
 }

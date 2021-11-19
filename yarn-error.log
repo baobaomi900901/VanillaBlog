@@ -1,0 +1,53 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn watch
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/a1111/Documents/blog/VanillaBlog/package.json: Unexpected token } in JSON at position 496
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "VanillaBlog",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:baobaomi900901/VanillaBlog.git",
+    "license": "MIT",
+    "scripts": {
+      "serve": "cross-env NODE_ENV=development concurrently -k \"npm run create-server\" \"npm run watch\" ",
+      "build": "cross-env NODE_ENV=production npm run build:css",
+      "create-server": "http-server -o /index.html -c-0 -p 9900 ./src",
+      "watch": "postcss src/assets/style/index.css -o src/dist/index.css --watch",
+    },
+    "devDependencies": {
+      "autoprefixer": "^10.4.0",
+      "concurrently": "^6.4.0",
+      "cross-env": "^7.0.3",
+      "cssnano": "^5.0.11",
+      "http-server": "^14.0.0",
+      "postcss-cli": "^9.0.2",
+      "postcss-import": "^14.0.2",
+      "tailwindcss": "^2.2.19"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
