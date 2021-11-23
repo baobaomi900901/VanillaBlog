@@ -1,23 +1,24 @@
 {
-  "name": "VanillaBlog",
+  "name": "lks",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:baobaomi900901/VanillaBlog.git",
   "license": "MIT",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development concurrently -k \"npm run create-server\" \"npm run watch\" ",
-    "build": "cross-env NODE_ENV=production npm run build:css",
-    "create-server": "http-server -o /index.html -c-0 -p 9900 ./src",
-    "watch": "postcss src/assets/style/index.css -o src/dist/index.css --watch"
+    "watch": "postcss src/assets/css/style.css -o index.css --watch",
+    "dev": "vite --host",
+    "build": "vite build",
+    "dw": "cross-env NODE_ENV=development concurrently -k \"npm run dev\" \"npm run watch\" "
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.0.11",
-    "http-server": "^14.0.0",
     "postcss-cli": "^9.0.2",
-    "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.2.19"
+    "sass": "^1.43.4",
+    "tailwindcss": "^2.2.19",
+    "three": "^0.134.0",
+    "vite": "^2.6.14"
+  },
+  "dependencies": {
   }
 }

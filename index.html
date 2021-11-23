@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>RGBshit</title>
+</head>
+
+<body id="root">
+    <!-- navbar -->
+    <div class=" absolute w-full h-20 px-16 flex items-center justify-between -z-10">
+        <div class="flex items-center">
+            <a href="./index.html">
+                <img src="./src/assets/img/logo.png" alt="" class=" w-8 h-8">
+            </a>
+        </div>
+        <nav class=" grid grid-flow-col gap-6 items-center text-white font-semibold leading-tight uppercase">
+            <a href="./index.html">
+                <span class="hover:text-dark-blue ">home</span>
+            </a>
+            <a href="https://baobaomi900901-blog.netlify.app/">
+                <span class="hover:text-dark-blue ">blog</span>
+            </a>
+            <a href="https://baobaomi900901-blog.netlify.app/">
+                <span class="hover:text-dark-blue ">resume</span>
+            </a>
+            <a href="https://github.com/baobaomi900901" target="_blank">
+                <svg width="24px" height="24px" style="
+                      vertical-align: -0.125em;
+                      -ms-transform: rotate(360deg);
+                      -webkit-transform: rotate(360deg);
+                      transform: rotate(360deg);
+                    " preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 250">
+                    <path
+                        d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46c6.397 1.185 8.746-2.777 8.746-6.158c0-3.052-.12-13.135-.174-23.83c-35.61 7.742-43.124-15.103-43.124-15.103c-5.823-14.795-14.213-18.73-14.213-18.73c-11.613-7.944.876-7.78.876-7.78c12.853.902 19.621 13.19 19.621 13.19c11.417 19.568 29.945 13.911 37.249 10.64c1.149-8.272 4.466-13.92 8.127-17.116c-28.431-3.236-58.318-14.212-58.318-63.258c0-13.975 5-25.394 13.188-34.358c-1.329-3.224-5.71-16.242 1.24-33.874c0 0 10.749-3.44 35.21 13.121c10.21-2.836 21.16-4.258 32.038-4.307c10.878.049 21.837 1.47 32.066 4.307c24.431-16.56 35.165-13.12 35.165-13.12c6.967 17.63 2.584 30.65 1.255 33.873c8.207 8.964 13.173 20.383 13.173 34.358c0 49.163-29.944 59.988-58.447 63.157c4.591 3.972 8.682 11.762 8.682 23.704c0 17.126-.148 30.91-.148 35.126c0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002C256 57.307 198.691 0 128.001 0zm-80.06 182.34c-.282.636-1.283.827-2.194.39c-.929-.417-1.45-1.284-1.15-1.922c.276-.655 1.279-.838 2.205-.399c.93.418 1.46 1.293 1.139 1.931zm6.296 5.618c-.61.566-1.804.303-2.614-.591c-.837-.892-.994-2.086-.375-2.66c.63-.566 1.787-.301 2.626.591c.838.903 1 2.088.363 2.66zm4.32 7.188c-.785.545-2.067.034-2.86-1.104c-.784-1.138-.784-2.503.017-3.05c.795-.547 2.058-.055 2.861 1.075c.782 1.157.782 2.522-.019 3.08zm7.304 8.325c-.701.774-2.196.566-3.29-.49c-1.119-1.032-1.43-2.496-.726-3.27c.71-.776 2.213-.558 3.315.49c1.11 1.03 1.45 2.505.701 3.27zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033c-1.448-.439-2.395-1.613-2.103-2.626c.301-1.01 1.747-1.484 3.207-1.028c1.446.436 2.396 1.602 2.095 2.622zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95c-1.53.034-2.769-.82-2.786-1.86c0-1.065 1.202-1.932 2.733-1.958c1.522-.03 2.768.818 2.768 1.868zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37c-1.485.271-2.861-.365-3.05-1.386c-.184-1.056.893-2.114 2.376-2.387c1.514-.263 2.868.356 3.061 1.403z"
+                        fill="#fff" />
+                </svg>
+            </a>
+        </nav>
+    </div>
+    <div class="HomePage bg-gray-800 w-full flex h-screen z-10">
+        <div class="HomePage_left h-screen w-5/12 hidden lg:block ">
+            <div class="
+                  HomePage_left_menu
+                  h-5/6
+                  bg-gray-200
+                  flex
+                  justify-center
+                  items-center
+                ">
+                <ul class="text-gray-900 text-3xl font-semibold inline-block w-1/2 h-auto">
+                    <h3 class="text-base text-gray-500 mb-10 uppercase">Menu</h3>
+                    <li class="Home_link mb-3"><a href="">Home</a></li>
+                    <li class="Porfolio_link mb-3"><a href="">Porfolio</a></li>
+                    <li class="Work_link mb-3"><a href="">Work</a></li>
+                    <li class="Creativity_link mb-3"><a href="">Creativity</a></li>
+                </ul>
+            </div>
+            <div class=""><img src="" alt="" /></div>
+        </div>
+        <div class="HomePage_content h-screen w-full overflow-auto bg-gray-200">
+            <div class="HomePage_content_head h-screen bg-gray-900">
+                <div class="Introduce flex justify-center items-center h-5/6">
+                    <div class="myself text-white opacity-80 uppercase leading-loose">
+                        <div class="vc text-sm font-black mb-4">Welcome</div>
+                        <div class="myname font-bold text-9xl">i'm<br />maosusu<br />designer</div>
+                    </div>
+                </div>
+                <div class="flex h-1/6">
+                    <div class="blue bg-dark-blue flex justify-center items-center w-1/2 h-full">
+                        <p class="text-white text-lg font-extrabold">About Me</p>
+                    </div>
+                    <div class="about text-white text-base uppercase py-0 px-8 grid w-1/2">
+                        <div class="about-describe border-b border-white grid items-end">
+                            <p class="mb-8">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
+                        </div>
+                        <div class="about-linkCoord text-sm flex justify-between items-center">
+                            <a href="https://dribbble.com/MobyTang">dribbble</a>
+                            <p class="about-coord">114.089592,22.635423</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-40 lg:pl-40 lg:pr-20 flex items-center flex-col">
+                <div class="el-Indt-content w-full flex flex-col mt-32">
+                    <span class="text-sm font-bold">01</span>
+                    <div class="text-6xl font-semibold mb-10">Maosusu.😾</div>
+                    <div>
+                        Our iMacs will testify to what we use them, Our iMacs will testify to
+                        what we use them, Our iMacs will testify to what we use them
+                    </div>
+                    <div>
+                        Our iMacs will testify to what we use them, Our iMacs will testify to
+                        what we use them, Our iMacs will testify to what we use them
+                    </div>
+                    <div>
+                        Our iMacs will testify to what we use them, Our iMacs will testify to
+                        what we use them, Our iMacs will testify to what we use them
+                    </div>
+                </div>
+                <div class="el-Indt-fl-content w-full mt-32">
+                    <span class="text-sm font-bold">02</span>
+                    <div class="mb-4">Looking forward to work</div>
+                    <div>
+                        <div class="
+                            flex
+                            justify-between
+                            items-center
+                            border-b border-gray-300
+                            pb-4
+                            mb-4
+                          ">
+                            <span class="text-4xl font-bold text-dark-blue">Industry</span>
+                            <span class="text-gray-400 font-light">toB</span>
+                        </div>
+                        <div class="
+                            flex
+                            justify-between
+                            items-center
+                            border-b border-gray-300
+                            pb-2
+                            mb-4
+                          ">
+                            <span class="text-4xl font-bold text-dark-blue">Workplace</span>
+                            <span class="text-gray-400 font-light">ShenZhen&ChangSha</span>
+                        </div>
+                        <div class="
+                            flex
+                            justify-between
+                            items-center
+                            border-b border-gray-300
+                            pb-2
+                            mb-4
+                          ">
+                            <span class="text-4xl font-bold text-dark-blue">Anytime</span>
+                            <span class="text-gray-400 font-light">995</span>
+                        </div>
+                        <ul class="text-sm mt-32 font-semibold">
+                            <li>3D</li>
+                            <li>UI/UX Design</li>
+                            <li>Motion Design</li>
+                            <li>Interaction Design</li>
+                            <li>Brand Design</li>
+                            <li>Web deveiopment</li>
+                        </ul>
+                        <div class="w-full text-center mt-24 relative">
+                            Good things comest to down-scrollers 🧼 😆
+                        </div>
+
+                        <div class="w-full mt-24">
+                            <div class="Inspirations-title relative text-black mb-8 z-50">
+                                <span class="text-sm font-bold">03</span>
+                                <div class="text-6xl font-semibold mb-4 mix-blend-difference">Inspirations</div>
+                                <span class="text-xs font-bold mr-4 text-dark-blue">2020 ~ new </span> <span
+                                    class="text-xs font-bold text-gray-400">Involve in product design process</span>
+                            </div>
+
+                            <main class="inspirations">
+                                <ul class="ul">
+                                    <li><span>Industry1</span> <span>toB</span></li>
+                                    <li><span>Industry2</span> <span>toB</span></li>
+                                    <li><span>Industry3</span> <span>toB</span></li>
+                                    <li><span>Industry4</span> <span>toB</span></li>
+                                    <li><span>Industry5</span> <span>toB</span></li>
+                                </ul>
+                            </main>
+                        </div>
+
+                        <div class="w-full mt-24">
+                            <div class="Inspirations-title relative text-black mb-8 z-50">
+                                <span class="text-sm font-bold">03</span>
+                                <div class="text-6xl font-semibold mb-4 mix-blend-difference">Inspirations</div>
+                                <span class="text-xs font-bold mr-4 text-dark-blue">2017 ~ 2019 </span><span
+                                    class="text-xs font-bold text-gray-400">Involve in product design process</span>
+                            </div>
+
+                            <main class="inspirations">
+                                <ul class="ul2">
+                                    <li><span>Industry1</span> <span>toB</span></li>
+                                    <li><span>Industry2</span> <span>toB</span></li>
+                                    <li><span>Industry3</span> <span>toB</span></li>
+                                    <li><span>Industry4</span> <span>toB</span></li>
+                                    <li><span>Industry5</span> <span>toB</span></li>
+                                </ul>
+                            </main>
+                        </div>
+
+
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./src/js/app.js" type="module"></script>
+</body>
+
+</html>
