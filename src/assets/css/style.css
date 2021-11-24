@@ -143,8 +143,8 @@ main {
   @apply text-4xl font-bold
 }
 
-.inspirations > ul > li:hover {
-  opacity: 0.5;
+.inspirations > ul > li:hover .inspirations li {
+  opacity: 0.1;
 }
 
 

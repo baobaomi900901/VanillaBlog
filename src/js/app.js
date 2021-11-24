@@ -76,7 +76,7 @@ class WebGL {
                         this.uniforms.uTexture.value = textureTen;
                         break;
                 }
-                console.log(idx);
+                // console.log(idx);
             })
 
             link.addEventListener('mouseleave', () => {
@@ -107,11 +107,11 @@ class WebGL {
     addEventListeners(element) {
         element.addEventListener('mouseenter', () => {
             this.linkHovered = true;
-            console.log("true");
+            // console.log("true");
         })
         element.addEventListener('mouseleave', () => {
             this.linkHovered = false;
-            console.log("false");
+            // console.log("false");
         })
     }
 
