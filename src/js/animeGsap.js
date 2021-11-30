@@ -2,7 +2,11 @@ import {
     gsap
 } from 'gsap'
 
+import "./anime.js";
+import { takeToMeHot } from "./anime.js";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +14,7 @@ gsap.set(".takeToMeText2", {
     y: 12,
     rotationX: -90
 });
+
 
 let mouseenterTrem = true
 let mouseoutTrem = false

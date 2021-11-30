@@ -28,7 +28,7 @@ takeToMeHot.addEventListener('mouseenter', function () {
             let v = `./src/assets/img/listiimgs/blue-${bbm}.png`
             takeToMe.src = v;
             //  类似 setInterval, 默认 60 刷新
-            raf = requestAnimationFrame(animloop);
+            let raf = requestAnimationFrame(animloop);
             if (bbm > 72) {
                 //  类似 clearInterval
                 cancelAnimationFrame(raf)
@@ -47,4 +47,4 @@ takeToMeHot.addEventListener('mouseenter', function () {
     }
 })
 
-
+export { takeToMeHot }
