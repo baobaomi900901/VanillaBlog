@@ -1,17 +1,19 @@
 {
   "name": "vitedemo",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview",
-    "watch": "postcss src/assets/css/style.css -o index.css --watch",
+    "watch": "postcss src/assets/css/style.css -o src/index.css --watch",
     "dw": "cross-env NODE_ENV=development concurrently -k \"npm run dev\" \"npm run watch\" "
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
     "concurrently": "^6.4.0",
     "cross-env": "^7.0.3",
+    "gsap": "^3.8.0",
     "postcss-cli": "^9.0.2",
     "sass": "^1.43.4",
     "tailwindcss": "^2.2.19",

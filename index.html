@@ -55,16 +55,16 @@
             </ul>
           </div>
 
-          <div class="leftimg bg-red-400"></div>
-
+          <div class="leftimgbox bg-red-400 h-1/5 relative">
+            <div class="leftimg"></div>
+          </div>
         </div>
       </div>
 
-      <div class="HomePage_content h-screen w-full overflow-auto bg-gray-200">
+      <div class="HomePage_content h-screen w-full overflow-auto bg-gray-200 relative">
 
-        <div class="HomePage_content_head bg-gray-800 h-screen flex flex-col">
-
-          <div class="Introduce flex justify-center items-center flex-1">
+        <div class="HomePage_content_head h-screen flex flex-col">
+          <div class="Introduce flex justify-center items-center flex-1 z-10">
             <div class="myself text-white opacity-80 uppercase leading-loose">
               <div class="vc text-base font-black mb-4">Welcome</div>
               <div class="myname font-bold text-9xl">
@@ -75,12 +75,10 @@
             </div>
           </div>
 
-          <div class="flex">
-
+          <div class="flex h-1/5 z-10">
             <div class="aboutme blue bg-dark-blue flex justify-center items-center w-1/2 flex-1">
               <p class="text-white text-lg font-extrabold">About Me</p>
             </div>
-
             <div class="about text-white text-base uppercase py-0 px-8 grid w-1/2">
               <div class="about-describe border-b border-white grid items-end">
                 <p class="mb-8 text-3xl">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
@@ -92,7 +90,7 @@
             </div>
 
           </div>
-
+          <div class="hbimg"></div>
         </div>
 
         <div class="px-40 lg:pl-40 lg:pr-20 flex items-center flex-col">
@@ -198,10 +196,16 @@
                   </ul>
                 </main>
               </div>
-              <div class="w-full text-center mt-24 relative">
+              <div class="w-full text-center mt-24 relative z-50">
                 Really 🐂 B huh 👏 😆
               </div>
               <br />
+              <div class="flex justify-center z-50 relative takeToMeBox">
+                <div class="takeToMeHot absolute"></div>
+                <div class="takeToMeText pointer-events-none">LET ME WORK</div>
+                <div class="takeToMeText2 pointer-events-none">TALK TO ME✍️</div>
+                <img src="./src/assets/img/listiimgs/blue-0.png" alt="" class="takeToMe w-80 h-80 z-50 pointer-events-none">
+              </div>
             </div>
           </div>
         </div>
@@ -210,6 +214,7 @@
   </div>
   <script src="./src/js/app.js" type="module"></script>
   <script src="./src/js/anime.js"></script>
+  <script src="./src/js/animeGsap.js" type="module"></script>
   <!-- <script type="module" src="/main.js"></script> -->
 </body>
 

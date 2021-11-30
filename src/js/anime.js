@@ -1,23 +1,50 @@
 // console.log(123);
+// import { gsap } from 'gsap'
 
-let aboutme = document.querySelector('.aboutme')
-let leftimg = document.querySelector('.leftimg')
+// let aboutme = document.querySelector('.aboutme')
+// let leftimg = document.querySelector('.leftimg')
 
-let aboutmeh = aboutme.clientHeight
-leftimg.style.height = `${aboutmeh}px`
+// let aboutmeh = aboutme.clientHeight
+// leftimg.style.height = `${aboutmeh}px`
 
-// console.log(leftimg.clientHeight);
+// window.addEventListener('resize', () => { 
+//     let h = aboutme.clientHeight
+//     leftimg.style.height = `${h}px`
+// });
 
-// console.log(aboutme.clientHeight);
+let takeToMe = document.querySelector('.takeToMe')
+let takeToMeBox = document.querySelector('.takeToMeBox')
+let takeToMeHot = document.querySelector('.takeToMeHot')
 
-// window.onresize = function () {
-//     console.log(2333333);
-// }
+var bbm = 0
+let mouse = true;
 
-window.addEventListener('resize', () => { 
-    let h = aboutme.clientHeight
-    leftimg.style.height = `${h}px`
-    console.log(aboutme.clientHeight);
-    console.log(leftimg.clientHeight);
-    console.log(2333);
-});
+let test = "test-123"
+
+takeToMeHot.addEventListener('mouseenter', function () {
+    if (mouse) {
+        (function animloop(time) {
+            myTimer();
+            let v = `./src/assets/img/listiimgs/blue-${bbm}.png`
+            takeToMe.src = v;
+            //  类似 setInterval, 默认 60 刷新
+            raf = requestAnimationFrame(animloop);
+            if (bbm > 72) {
+                //  类似 clearInterval
+                cancelAnimationFrame(raf)
+                // 重置动画帧
+                mouse = true
+                // 重置动画帧
+                bbm = 0
+            }
+        })();
+    }
+
+    function myTimer() {
+        bbm++
+        // 动画播放标签
+        mouse = false;
+    }
+})
+
+
