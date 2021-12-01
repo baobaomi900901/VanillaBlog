@@ -12,6 +12,11 @@
 //     leftimg.style.height = `${h}px`
 // });
 
+import "./images.js";
+import {
+    blues
+} from "./images.js";
+
 let takeToMe = document.querySelector('.takeToMe')
 let takeToMeBox = document.querySelector('.takeToMeBox')
 let takeToMeHot = document.querySelector('.takeToMeHot')
@@ -19,13 +24,20 @@ let takeToMeHot = document.querySelector('.takeToMeHot')
 var bbm = 0
 let mouse = true;
 
-let test = "test-123"
+// console.log(blues.blue0);
+
+let blue0 = blues.blue0
+// console.log(blues);
+
 
 takeToMeHot.addEventListener('mouseenter', function () {
     if (mouse) {
         (function animloop(time) {
             myTimer();
-            let v = `./src/assets/img/listiimgs/blue-${bbm}.png`
+            // let v = `./src/assets/img/listiimgs/blue-${bbm}.png`
+            // let v = blues.blue[`${bbm}`]
+            let v = blues[`blue${bbm}`]
+            console.log("v", v);
             takeToMe.src = v;
             //  类似 setInterval, 默认 60 刷新
             let raf = requestAnimationFrame(animloop);
@@ -47,4 +59,15 @@ takeToMeHot.addEventListener('mouseenter', function () {
     }
 })
 
-export { takeToMeHot }
+let array = []
+
+// for (let i = 0; i < 74; i++) {
+//     // console.log(`import blue${i} from "../assets/img/listiimgs/blue-${i}.png";`);
+//     array.push(`blue${i}`)
+// }
+
+console.log(array);
+
+export {
+    takeToMeHot
+}

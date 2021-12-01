@@ -1,5 +1,7 @@
 import * as THREE from 'three';
-import images from './images';
+// import images from './images';
+import "./images.js";
+import { images } from "./images.js";
 import vertex from './shaders/vertex.glsl?raw';
 import fragment from './shaders/fragment.glsl?raw';
 
