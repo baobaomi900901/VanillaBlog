@@ -33,7 +33,7 @@ takeToMeHot.addEventListener('mouseenter', function () {
             // let v = `./src/assets/img/listiimgs/blue-${bbm}.png`
             // let v = blues.blue[`${bbm}`]
             let v = blues[`blue${bbm}`]
-            // console.log("v", v);
+            console.log("v", v);
             takeToMe.src = v;
             //  类似 setInterval, 默认 60 刷新
             let raf = requestAnimationFrame(animloop);
