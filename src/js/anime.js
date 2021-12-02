@@ -24,7 +24,7 @@ let takeToMeHot = document.querySelector('.takeToMeHot')
 var bbm = 0
 let mouse = true;
 
-console.log(blues);
+// console.log(blues);
 
 takeToMeHot.addEventListener('mouseenter', function () {
     if (mouse) {
@@ -33,7 +33,7 @@ takeToMeHot.addEventListener('mouseenter', function () {
             // let v = `./src/assets/img/listiimgs/blue-${bbm}.png`
             // let v = blues.blue[`${bbm}`]
             let v = blues[`blue${bbm}`]
-            console.log("v", v);
+            // console.log("v", v);
             takeToMe.src = v;
             //  类似 setInterval, 默认 60 刷新
             let raf = requestAnimationFrame(animloop);
@@ -54,15 +54,6 @@ takeToMeHot.addEventListener('mouseenter', function () {
         mouse = false;
     }
 })
-
-let array = []
-
-// for (let i = 0; i < 74; i++) {
-//     // console.log(`import blue${i} from "../assets/img/listiimgs/blue-${i}.png";`);
-//     array.push(`blue${i}`)
-// }
-
-console.log(array);
 
 export {
     takeToMeHot

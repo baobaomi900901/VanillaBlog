@@ -1,0 +1,97 @@
+html,
+body {
+    user-select: none;
+    /* overscroll-behavior: none; */
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+    /* overflow: hidden; */
+    user-select: none;
+}
+
+body {
+    -webkit-overflow-scrolling: touch;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+div>span {
+    /* 行结块 */
+    display: inline-block;
+}
+
+.divText {
+    /* font-size: 1em; */
+    /* font-weight: bold;
+  text-transform: uppercase;
+  color: white; */
+
+    /* align-self: center; */
+    /* align-content: center; */
+    /* height: 30px; */
+    /* position: absolute; */
+    /* top: 50%;
+  left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /*50%为自身尺寸的一半*/
+}
+
+.StartPage {
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    position: relative;
+}
+
+.StartAnimation {
+    /* background: #000; */
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 100;
+
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.SATextHead {
+    font-size: 16px;
+    margin-bottom: 64px;
+    position: relative;
+}
+
+.SATextBox {
+    margin-bottom: 128px;
+    width: 100%;
+    position: relative;
+    font-weight: bold;
+}
+
+.SATextItem {
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+.SATextFooter {
+    opacity: 0.8;
+}
