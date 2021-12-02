@@ -3,7 +3,9 @@ import {
 } from 'gsap'
 
 import "./anime.js";
-import { takeToMeHot } from "./anime.js";
+import {
+    takeToMeHot
+} from "./anime.js";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 // gsap.registerPlugin(ScrollTrigger);
 
@@ -62,12 +64,11 @@ setTimeout(() => {
         let StartAnimation = document.querySelector('.StartAnimation')
         StartAnimation.classList.remove('hidden')
     }())
-    startAnime()
+    // startAnime()
 }, 1000)
 
 // 起始动画
 function startAnime() {
-    console.log(123);
     let SATextHeadEnt = EnterAnime("SATextHead")
     let SATextFooterEnt = EnterAnime("SATextFooter")
     let t1Ent = EnterAnime("t1")
@@ -104,14 +105,162 @@ function startAnime() {
     line.add(t6Ent);
     line.add(t6Out);
     line.add(SATextHeadOut);
-    line.add(SATextFooterOut,"-=0.5");
-    line.to(".StartPage",{
-        opacity:0,
-        duration:2,
-        onComplete:function () {
+    line.add(SATextFooterOut, "-=0.5");
+    line.to(".StartPage", {
+        opacity: 0,
+        duration: 2,
+        onComplete: function () {
             console.log("end");
         }
     })
+}
+
+homePage1Anime()
+
+function homePage1Anime(params) {
+
+    let logo = gsap.fromTo('#logo', {
+        x: -20,
+        opacity: 0
+    }, {
+        x: 0,
+        opacity: 1,
+        duration: 0.5
+    })
+
+    let navbar = gsap.fromTo('.navBarItem', {
+        x: 10,
+        opacity: 0
+    }, {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        // 从最后一个元素开始
+        stagger: -0.05
+    })
+
+
+    let leftMenuBox = gsap.fromTo('#leftMenuBox', {
+        transformOrigin: 'left',
+        scaleX: 0,
+        opacity: 0,
+    }, {
+
+        scaleX: 1,
+        opacity: 1,
+        duration: 0.5,
+    })
+
+    let HomePageContentHead = gsap.fromTo('#HomePageContentHead', {
+        transformOrigin: 'left',
+        scaleX: 0,
+        opacity: 0,
+    }, {
+
+        scaleX: 1,
+        opacity: 1,
+        duration: 0.8,
+    })
+
+    let menu = gsap.fromTo('.menu', {
+        x: -20,
+        opacity: 0,
+    }, {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+    })
+
+    let menuItem = gsap.fromTo('.menuItem', {
+        x: -20,
+        opacity: 0,
+    }, {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.1
+    })
+
+    let aboutMeBox = gsap.fromTo('#aboutMeBox', {
+        transformOrigin: 'left',
+        scaleX: 0,
+        opacity: 0,
+    }, {
+
+        scaleX: 1,
+        opacity: 1,
+        duration: 0.5,
+    })
+
+    let aboutLine = gsap.fromTo('#aboutLine', {
+        transformOrigin: 'left',
+        scaleX: 0,
+        opacity: 0,
+    }, {
+
+        scaleX: 1,
+        opacity: 1,
+        duration: 0.5,
+    })
+
+    let hbimg = gsap.fromTo('.hbimg', {
+        transformOrigin: 'left',
+        scale: 1.2,
+        opacity: 0,
+    }, {
+        scale: 1.05,
+        opacity: 1,
+        duration: 1.2,
+        ease: "elastic.out(1, 1)",
+    })
+
+
+
+    let mark = gsap.fromTo('.mark', {
+        transformOrigin: 'right',
+        scaleX: 1,
+        opacity: 1
+    }, {
+        scaleX: 0,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0
+    })
+
+
+
+    let welcome = EnterAnime("welcome")
+    let myname1 = EnterAnime("myname1", 0.5, 0.02, null, 60)
+    let myname2 = EnterAnime("myname2", 0.5, 0.02, null, 60)
+    let myname3 = EnterAnime("myname3", 0.5, 0.02, null, 60)
+    let aboutMe = EnterAnime("aboutMe", 0.5, 0.02)
+    let aboutText = EnterAnime("aboutText", 0.5, 0.01)
+    let dribbbleLink = EnterAnime("dribbbleLink", 0.5, 0.01)
+    let myCoords = EnterAnime("myCoords", 0.5, 0.01)
+
+    let homePage1 = gsap.timeline({
+        delay: 2
+    });
+
+
+    homePage1.add(logo);
+    homePage1.add(navbar, "-=0.2");
+    homePage1.add(leftMenuBox, 0);
+    homePage1.add(HomePageContentHead, 0.4);
+    homePage1.add(menu, "-=0.2");
+    homePage1.add(menuItem, "-=0.2");
+    homePage1.add(welcome, "-=0.8");
+    homePage1.add(myname1, "-=0.4");
+    homePage1.add(myname2, "-=0.4");
+    homePage1.add(myname3, "-=0.4");
+    homePage1.add(aboutMeBox, 1);
+    homePage1.add(aboutLine, 1.4);
+    homePage1.add(mark, 2);
+    homePage1.add(hbimg, 2);
+    homePage1.add(aboutMe, "-=1");
+    homePage1.add(aboutText, "-=0.6");
+    homePage1.add(dribbbleLink, "-=0.8");
+    homePage1.add(myCoords, "-=0.8");
 
 
 }
@@ -137,38 +286,38 @@ function textSplit(el, sc) {
         } else {
             span.innerHTML = cur;
         }
-        element.appendChild(span).classList.add(sc,'inline-block');
+        element.appendChild(span).classList.add(sc, 'inline-block');
     }, 0);
 }
 
 // 文字入场动画
-function EnterAnime(el, duration = 0.75) {
-
+function EnterAnime(el, duration = 0.75, stagger = 0.01, delayTime = 0, y = 10) {
     // 文字类, 动画中使用
     let spanclass = `${el}Span`
     textSplit(el, spanclass)
     // 动画
     let anime = gsap.fromTo(
-        `.${spanclass}`,
-        {
+        `.${spanclass}`, {
             transformOrigin: 'bottom  center',
-            y: 10,
+            y: `${y}`,
             opacity: 0,
             rotateX: 90,
         }, {
             y: 0,
             duration: `${duration}`,
-            stagger: 0.01,
+            stagger: `${stagger}`,
+            delay: `${delayTime}`,
             opacity: 1,
             rotateX: 0,
-            ease: "elastic.out(1, 0.75)"
+            ease: "circ.out",
+            // ease: "elastic.out(1, 0.75)"
         }
     );
     return anime
 }
 
 // 文字退场动画
-function outAnime(el, duration = 0.5, delayTime = 0, onCmplt) {
+function outAnime(el, duration = 0.5, stagger = 0.01, delayTime = 0) {
     let element = document.querySelectorAll(`.${el}Span`)
     if (element.length) {
         return animeOut()
@@ -183,9 +332,9 @@ function outAnime(el, duration = 0.5, delayTime = 0, onCmplt) {
         let anime = gsap.to(`.${spanclass}`, {
             transformOrigin: 'top  center',
             y: -0,
-            delay: `${delayTime}`,
-            stagger: 0.01,
             duration: `${duration}`,
+            stagger: `${stagger}`,
+            delay: `${delayTime}`,
             opacity: 0,
             rotateX: 90,
             // ease: "elastic.out(1, 0.75)",

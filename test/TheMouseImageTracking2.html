@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
+    integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>鼠标图片跟踪</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .cursor {
+      position: absolute;
+      width: 600px;
+      height: 400px;
+      top: 50%;
+      left: 50%;
+      /* transform: translate(-50%,-50%); */
+      margin: -100px 0 0 -100px;
+      background: no-repeat 50% 50%;
+      background-size: cover;
+      z-index: 1;
+
+    }
+
+    .cursor img {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .wrapper {
+      width: 80vw;
+      margin: 180px auto;
+      height: 100vh;
+    }
+
+    .item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-basis: 1;
+      position: relative;
+      z-index: 2;
+      color: white;
+      /* 背景混合 */
+      mix-blend-mode: difference;
+
+    }
+
+    .item-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .item-title h1 {
+      font-weight: 500;
+    }
+
+    .item-categ {
+      font-weight: lighter;
+    }
+
+    .imgtrue {
+      opacity: 1;
+    }
+
+    .imgfalse {
+      opacity: 0;
+    }
+
+
+    .bgImg1 {
+      background: url(./img/gril.jpeg) no-repeat 50% 50%;
+      background-size: cover;
+    }
+
+    .bgImg2 {
+      background: url(./img/gril2.jpeg) no-repeat 50% 50%;
+      background-size: cover;
+    }
+
+    .bgImg3 {
+      background: url(./img/gril3.jpeg) no-repeat 50% 50%;
+      background-size: cover;
+    }
+  </style>
+</head>
+<div class="cursor"> 
+  <img src="./img/gril2.jpeg" />
+  <img src="./img/gril3.jpeg" />
+  <img src="./img/gril4.jpeg" />
+</div>
+<div class="wrapper">
+  <div class="lists">
+    <div class="item" data-index="0">
+      <div class="item-title">
+        <h1>MobyTang</h1>
+      </div>
+      <div class="item-categ">Design</div>
+      <div class="item-overlay"></div>
+    </div>
+
+    <div class="item" data-index="1">
+      <div class="item-title">
+        <h1>MobyTang</h1>
+      </div>
+      <div class="item-categ">Design</div>
+      <div class="item-overlay"></div>
+    </div>
+
+    <div class="item" data-index="2">
+      <div class="item-title">
+        <h1>MobyTang</h1>
+      </div>
+      <div class="item-categ">Design</div>
+      <div class="item-overlay"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const wrapper = document.querySelector('.wrapper')
+  // const span1 = document.querySelector('.span-1')
+  // const span2 = document.querySelector('.span-2')
+  // const span3 = document.querySelector('.span-3')
+  const cursor = document.querySelector('.cursor')
+  const cursorImgElms = Array.from(document.querySelectorAll('.cursor img'))
+  // const lists = document.querySelectorAll('.lists')
+  let imgOpacity = false
+
+  // span1.addEventListener('mouseover', function () {
+  //   cursor.style.backgroundImage = "url(./img/gril2.jpeg)"
+  // })
+  // span1.addEventListener('mouseleave', function () {
+  //   cursor.style.backgroundImage = ""
+  // })
+
+  // span2.addEventListener('mouseover', function () {
+  //   cursor.style.backgroundImage = "url(./img/gril3.jpeg)"
+  // })
+  // span2.addEventListener('mouseleave', function () {
+  //   cursor.style.backgroundImage = ""
+  // })
+
+  // span3.addEventListener('mouseover', function () {
+  //   cursor.style.backgroundImage = "url(./img/gril4.jpeg)"
+  // })
+  // span3.addEventListener('mouseleave', function () {
+  //   cursor.style.backgroundImage = ""
+  // })
+
+  const images = ['./img/gril2.jpeg', './img/gril3.jpeg', './img/gril4.jpeg']
+
+
+  wrapper.addEventListener("mousemove", function (evt) {
+    // cursor.style.left = evt.x - cursor.clientWidth / 2 + "px"
+    // cursor.style.top = evt.y - cursor.clientHeight / 2 + "px"
+
+    TweenLite.to(cursor, 0.5, {
+      css: {
+        left: evt.x - cursor.clientWidth / 2 + "px",
+        top: evt.y - cursor.clientHeight / 2 + "px"
+      },
+      delay: 0.03
+    })
+
+    const itemElm = evt && evt.target && evt.target.closest('.item')
+
+    if (!itemElm) return
+    const index = Number(itemElm.dataset.index)
+
+    // if (index !== 0 && !index) return
+    // const imageUrl = images[index]
+
+    // console.log(imageUrl)
+
+    // TweenLite.to(cursor, 0.3, {
+    //   css: { backgroundImage: `url(${imageUrl})` }
+    // })
+    
+    cursorImgElms.map((elm, i) => {
+      if (i === index) {
+        elm.style.opacity = 1
+      } else {
+        elm.style.opacity = 0
+      }
+    })
+  })
+
+  wrapper.addEventListener("mouseenter", function () {
+    console.log('in')
+    TweenLite.to(cursor, 0.3, {
+      scale: 1,
+      autoAlpha: 1
+    })
+  })
+
+  wrapper.addEventListener("mouseleave", function () {
+    console.log('out')
+
+    cursorImgElms.map(elm => elm.style.opacity = 0)
+    TweenLite.to(cursor, 0.3, {
+      scale: 0.1,
+      autoAlpha: 0
+    })
+  })
+
+
+
+
+  if (imgOpacity = true) {
+    cursor.classList.add('imgtrue')
+  } else {
+    cursor.classList.add('imgfalse')
+  }
+</script>
+
+<body>
+
+</body>
+
+</html>

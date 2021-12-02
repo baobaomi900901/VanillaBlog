@@ -14,6 +14,10 @@ body {
   height: 100vh;
 }
 
+svg:hover path{
+  fill : #0042f6;
+}
+
 /* home */
 .Porfolio_link:hover::before {
   content: "😼.";
