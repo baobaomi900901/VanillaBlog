@@ -84,6 +84,7 @@ import blue71 from "../assets/img/listiimgs/blue-71.png";
 import blue72 from "../assets/img/listiimgs/blue-72.png";
 import blue73 from "../assets/img/listiimgs/blue-73.png";
 
+import homeBigImage from "../assets/img/home-big-image.png";
 
 const images = {
     imageOne,
@@ -175,9 +176,13 @@ const blues = {
     blue73
 }
 
+const bigImage = {
+    homeBigImage
+}
+
 
 // export default images;
 
 export {
-    images,blues
+    images,blues,bigImage
 };

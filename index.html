@@ -15,9 +15,9 @@
   </style>
 </head>
 
-<body class=" bg-black">
+<body class="body bg-black">
   <!-- 起始 -->
-  <div class="StartPage absolute w-screen h-screen bg-gray-900 z-50 select-none hidden">
+  <div class="StartPage absolute w-screen h-screen bg-gray-900 z-50 select-none">
     <div class="StartAnimation w-full h-full relative z-50 text-white flex flex-col justify-center items-center hidden">
       <div class="SATextHead text-base mb-16" id="SATextHead">MobyTang™ 😼 Portfolio</div>
       <div class="SATextBox font-semibold mb-32 w-full text-center">
@@ -32,7 +32,7 @@
       <!-- <div class="t123" id="t123">T123</div> -->
     </div>
   </div>
-  <div id="app" class=" absolute top-0 w-full">
+  <div id="app" class=" absolute top-0 w-full hidden">
     <div class=" absolute w-full h-20 px-16 flex items-center justify-between z-50">
       <div class="flex items-center" id="logo">
         <a href="index.html">
@@ -67,7 +67,7 @@
 
       <div class="HomePage_left w-5/12 hidden lg:block h-screen">
         <div class="h-full flex flex-col">
-          <div id="leftMenuBox" class=" HomePage_left_menu bg-gray-300 flex flex-1 justify-center items-center">
+          <div id="leftMenuBox" class=" HomePage_left_menu bg-gray-300 flex flex-1 justify-center items-center z-10">
             <ul class="text-gray-900 text-3xl font-semibold inline-block w-1/2 h-auto">
               <h3 class="menu text-base text-gray-500 mb-10 uppercase">Menu</h3>
               <li class="menuItem Home_link mb-3"><a href="http://www.baidu.com">Home</a></li>
@@ -77,7 +77,7 @@
             </ul>
           </div>
 
-          <div class="leftimgbox bg-red-400 h-1/5 relative">
+          <div id="leftimgbox" class="leftimgbox bg-gray-300 h-1/5 relative z-0">
             <div class="leftimg"></div>
           </div>
         </div>
@@ -85,7 +85,7 @@
 
       <div class="HomePage_content h-screen w-full overflow-auto  relative">
 
-        <div id="HomePageContentHead" class="HomePage_content_head bg-gray-800 h-screen flex flex-col">
+        <div id="HomePageContentHead" class="HomePage_content_head bg-gray-50 h-screen flex flex-col">
           <div class="Introduce flex justify-center items-center flex-1 z-10">
             <div class="myself text-white opacity-80 uppercase leading-loose">
               <div id="welcome" class="welcome vc text-base font-black mb-4">Welcome</div>
@@ -112,10 +112,10 @@
             </div>
 
           </div>
-          <div class="marks absolute w-full h-full grid grid-cols-3" style="z-index: 1;"> 
-            <div class="mark mark1 bg-gray-800"></div>
-            <div class="mark mark2 bg-gray-800"></div>
-            <div class="mark mark3 bg-gray-800"></div>
+          <div class="marks absolute w-full h-full grid grid-cols-3 gap-1" style="z-index: 1;"> 
+            <div class="mark mark1 bg-gray-50 opacity-50"></div>
+            <div class="mark mark2 bg-gray-50 opacity-50"></div>
+            <div class="mark mark3 bg-gray-50 opacity-50"></div>
           </div>
           <div class="hbimg"></div>
         </div>

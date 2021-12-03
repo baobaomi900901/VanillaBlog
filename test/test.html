@@ -41,9 +41,9 @@
         <div class="box b">BB</div>
         <div class="box c">CC</div>
         <div class="box d">dd</div>
-        <div class="box d">dd</div>
-        <div class="box d">dd</div>
-        <div class="box d">dd</div>
+        <div class="box e">dd</div>
+        <div class="box f">dd</div>
+        <div class="box g">dd</div>
     </div>
 
 
@@ -59,12 +59,12 @@
         gsap.to(".c",{
             // scrollTrigger:'.d',
             scrollTrigger:{
-                trigger: '.c',
+                trigger: '.b',
                 start:"20px center",  //前一个值是元素属性(也可以 200px), 后一个值是窗口属性
                 end:"+=100", // 结束点
                 markers: "true",// 启用标尺
                 toggleActions:'play pause resume pause', //restart
-                scrub:2, // 擦洗动画, true, 整体动画时长
+                scrub:1, // 擦洗动画, true, 整体动画时长
                 pin: true,
                 pinSpacing: false
             },

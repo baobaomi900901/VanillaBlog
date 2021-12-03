@@ -63,12 +63,16 @@ setTimeout(() => {
     (function moveHidden() {
         let StartAnimation = document.querySelector('.StartAnimation')
         StartAnimation.classList.remove('hidden')
+        let app = document.querySelector('#app')
+        app.classList.remove('hidden')
     }())
     // startAnime()
+    var allAnimeLine = gsap.timeline({});
+    allAnimeLine.add(line); 
+    allAnimeLine.add(homePage1,"-=2");
 }, 1000)
 
 // 起始动画
-function startAnime() {
     let SATextHeadEnt = EnterAnime("SATextHead")
     let SATextFooterEnt = EnterAnime("SATextFooter")
     let t1Ent = EnterAnime("t1")
@@ -113,11 +117,8 @@ function startAnime() {
             console.log("end");
         }
     })
-}
 
-homePage1Anime()
-
-function homePage1Anime(params) {
+// homePage-1-Anime
 
     let logo = gsap.fromTo('#logo', {
         x: -20,
@@ -149,6 +150,29 @@ function homePage1Anime(params) {
         scaleX: 1,
         opacity: 1,
         duration: 0.5,
+    })
+
+    let leftimgbox = gsap.fromTo('#leftimgbox', {
+        transformOrigin: 'left',
+        scaleX: 0,
+        opacity: 0,
+    }, {
+
+        scaleX: 1,
+        opacity: 1,
+        duration: 0.5,
+    })
+
+    let leftimg = gsap.fromTo('.leftimg', {
+        transformOrigin: 'right',
+        scale: 1.2,
+        opacity: 0,
+    }, {
+        scale: 1.05,
+        opacity: 1,
+        duration: 1.2,
+        ease: "circ.inOut"
+        // ease: "elastic.out(1, 1)",
     })
 
     let HomePageContentHead = gsap.fromTo('#HomePageContentHead', {
@@ -211,10 +235,9 @@ function homePage1Anime(params) {
         scale: 1.05,
         opacity: 1,
         duration: 1.2,
-        ease: "elastic.out(1, 1)",
+        ease: "circ.inOut"
+        // ease: "elastic.out(1, 1)",
     })
-
-
 
     let mark = gsap.fromTo('.mark', {
         transformOrigin: 'right',
@@ -224,10 +247,11 @@ function homePage1Anime(params) {
         scaleX: 0,
         opacity: 0,
         duration: 0.5,
-        stagger: 0
+        stagger: 0,
+        onComplete: function () {
+            console.log("mark");
+        }
     })
-
-
 
     let welcome = EnterAnime("welcome")
     let myname1 = EnterAnime("myname1", 0.5, 0.02, null, 60)
@@ -239,32 +263,29 @@ function homePage1Anime(params) {
     let myCoords = EnterAnime("myCoords", 0.5, 0.01)
 
     let homePage1 = gsap.timeline({
-        delay: 2
+        delay: 1
     });
-
 
     homePage1.add(logo);
     homePage1.add(navbar, "-=0.2");
     homePage1.add(leftMenuBox, 0);
+    homePage1.add(leftimgbox, 0);
+    homePage1.add(leftimg, 1.2);
     homePage1.add(HomePageContentHead, 0.4);
     homePage1.add(menu, "-=0.2");
     homePage1.add(menuItem, "-=0.2");
-    homePage1.add(welcome, "-=0.8");
-    homePage1.add(myname1, "-=0.4");
-    homePage1.add(myname2, "-=0.4");
-    homePage1.add(myname3, "-=0.4");
+    homePage1.add(welcome, 1.5); // "-=0.8"
+    homePage1.add(myname1, 1.6); // "-=0.4"
+    homePage1.add(myname2, 1.7); // "-=0.4"
+    homePage1.add(myname3, 1.8); // "-=0.4"
     homePage1.add(aboutMeBox, 1);
     homePage1.add(aboutLine, 1.4);
-    homePage1.add(mark, 2);
-    homePage1.add(hbimg, 2);
+    homePage1.add(mark, 1.6);
+    homePage1.add(hbimg, 1.2);
     homePage1.add(aboutMe, "-=1");
     homePage1.add(aboutText, "-=0.6");
     homePage1.add(dribbbleLink, "-=0.8");
     homePage1.add(myCoords, "-=0.8");
-
-
-}
-
 
 
 // 提取文字拆分
