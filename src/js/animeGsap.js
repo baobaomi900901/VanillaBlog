@@ -114,6 +114,8 @@ setTimeout(() => {
         opacity: 0,
         duration: 2,
         onComplete: function () {
+            let StartPage = document.querySelector('.StartPage')
+            StartPage.classList.add('hidden')
             console.log("end");
         }
     })
