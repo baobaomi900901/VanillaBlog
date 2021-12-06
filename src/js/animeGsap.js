@@ -68,11 +68,12 @@ setTimeout(() => {
     }())
     // startAnime()
     var allAnimeLine = gsap.timeline({});
-    allAnimeLine.add(line); 
-    allAnimeLine.add(homePage1,"-=2");
+    // allAnimeLine.add(a); 
+    allAnimeLine.add(homePage1);
 }, 1000)
 
 // 起始动画
+function a() {
     let SATextHeadEnt = EnterAnime("SATextHead")
     let SATextFooterEnt = EnterAnime("SATextFooter")
     let t1Ent = EnterAnime("t1")
@@ -119,6 +120,10 @@ setTimeout(() => {
             console.log("end");
         }
     })
+
+    return line
+
+}
 
 // homePage-1-Anime
 
@@ -268,26 +273,26 @@ setTimeout(() => {
         delay: 1
     });
 
-    homePage1.add(logo);
-    homePage1.add(navbar, "-=0.2");
+    homePage1.add(logo, 1);
+    homePage1.add(navbar, 1);
     homePage1.add(leftMenuBox, 0);
     homePage1.add(leftimgbox, 0);
     homePage1.add(leftimg, 1.2);
     homePage1.add(HomePageContentHead, 0.4);
-    homePage1.add(menu, "-=0.2");
-    homePage1.add(menuItem, "-=0.2");
+    homePage1.add(menu, 1.4);
+    homePage1.add(menuItem, 1.6);
     homePage1.add(welcome, 1.5); // "-=0.8"
     homePage1.add(myname1, 1.6); // "-=0.4"
     homePage1.add(myname2, 1.7); // "-=0.4"
     homePage1.add(myname3, 1.8); // "-=0.4"
     homePage1.add(aboutMeBox, 1);
     homePage1.add(aboutLine, 1.4);
-    homePage1.add(mark, 1.6);
+    homePage1.add(mark, 1.4);
     homePage1.add(hbimg, 1.2);
-    homePage1.add(aboutMe, "-=1");
-    homePage1.add(aboutText, "-=0.6");
-    homePage1.add(dribbbleLink, "-=0.8");
-    homePage1.add(myCoords, "-=0.8");
+    homePage1.add(aboutMe, 1.9);
+    homePage1.add(aboutText, 2);
+    homePage1.add(dribbbleLink,2.1);
+    homePage1.add(myCoords, 2.2);
 
 
 // 提取文字拆分

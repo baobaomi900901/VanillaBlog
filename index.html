@@ -17,7 +17,7 @@
 
 <body class="body bg-black">
   <!-- 起始 -->
-  <div class="StartPage absolute w-screen h-screen bg-gray-900 z-50 select-none z-50">
+  <div class="StartPage absolute w-screen h-screen bg-gray-900 z-50 select-none z-50 hidden">
     <div class="StartAnimation w-full h-full relative z-50 text-white flex flex-col justify-center items-center hidden">
       <div class="SATextHead text-base mb-16" id="SATextHead">MobyTang™ 😼 Portfolio</div>
       <div class="SATextBox font-semibold mb-32 w-full text-center">
@@ -78,6 +78,7 @@
           </div>
 
           <div id="leftimgbox" class="leftimgbox bg-gray-300 h-1/5 relative z-0">
+            <div class="mark w-full h-full bg-gray-50 opacity-50 absolute"></div>
             <div class="leftimg"></div>
           </div>
         </div>
@@ -105,19 +106,19 @@
               <div id="aboutLine" class="about-describe border-b border-white grid items-end">
                 <p id="aboutText" class="mb-8 text-3xl">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
               </div>
-              <div class="about-linkCoord text-base flex justify-between items-center">
+              <div class="about-linkCoord text-base flex justify-between items-center pb-3 box-border">
                 <a id="dribbbleLink" href="https://dribbble.com/MobyTang">dribbble</a>
                 <p id="myCoords" class="about-coord">114.089592,22.635423</p>
               </div>
             </div>
 
           </div>
-          <!-- <div class="marks absolute w-full h-full grid grid-cols-3 gap-1" style="z-index: 1;"> 
+          <div class="marks absolute w-full h-full grid grid-cols-3 gap-1" style="z-index: 1;"> 
             <div class="mark mark1 bg-gray-50 opacity-50"></div>
             <div class="mark mark2 bg-gray-50 opacity-50"></div>
             <div class="mark mark3 bg-gray-50 opacity-50"></div>
-          </div> -->
-          <div class=" w-full h-full relative" style="overflow: hidden">
+          </div>
+          <div class=" w-full h-full absolute top-0 left-0" style="overflow: hidden">
             <div class="hbimg"></div>
           </div>
 
