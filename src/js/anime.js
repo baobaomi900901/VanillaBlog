@@ -11,15 +11,28 @@
 //     let h = aboutme.clientHeight
 //     leftimg.style.height = `${h}px`
 // });
-
+import * as THREE from 'three';
 import "./images.js";
 import {
     blues
 } from "./images.js";
 
+
+
 let takeToMe = document.querySelector('.takeToMe')
-let takeToMeBox = document.querySelector('.takeToMeBox')
 let takeToMeHot = document.querySelector('.takeToMeHot')
+
+
+// 加载 blues 图片
+let bluesLoad = {} 
+let loadBlues = Object.values(blues)
+for (let i = 0; i < Object.keys(blues).length; i++) {
+    // console.log( "blue"+`${i}`); 
+    bluesLoad[`blue${i}`] = new THREE.TextureLoader().load(loadBlues[i]);
+}
+
+console.log(blues);
+console.log(blues.blue0);
 
 var bbm = 0
 let mouse = true;
@@ -32,9 +45,13 @@ takeToMeHot.addEventListener('mouseenter', function () {
             myTimer();
             // let v = `./src/assets/img/listiimgs/blue-${bbm}.png`
             // let v = blues.blue[`${bbm}`]
-            let v = blues[`blue${bbm}`]
-            // console.log("v", v);
-            takeToMe.src = v;
+            // let v = blues[`blue${bbm}`]
+            // let b = `blues.blue${bbm}`
+            let c = loadBlues[`${bbm}`]
+            // console.log("v->",v);
+            // console.log("b->",b);
+            console.log("c->", c);
+            takeToMe.src = c;
             //  类似 setInterval, 默认 60 刷新
             let raf = requestAnimationFrame(animloop);
             if (bbm > 72) {

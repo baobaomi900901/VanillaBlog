@@ -27,15 +27,15 @@ const textureNine = new THREE.TextureLoader().load(images.imageNine);
 const textureTen = new THREE.TextureLoader().load(images.imageTen);
 
 // 加载 blues 图片
-let bluesLoad = {} 
-let loadBlues = Object.values(blues)
-for (let i = 0; i < Object.keys(blues).length; i++) {
-    // console.log( "blue"+`${i}`); 
-    bluesLoad[`blue${i}`] = new THREE.TextureLoader().load(loadBlues[i]);
-}
+// let bluesLoad = {} 
+// let loadBlues = Object.values(blues)
+// for (let i = 0; i < Object.keys(blues).length; i++) {
+//     // console.log( "blue"+`${i}`); 
+//     bluesLoad[`blue${i}`] = new THREE.TextureLoader().load(loadBlues[i]);
+// }
 
-// 加载 homeBigImage 图片
-const homeBigImage = new THREE.TextureLoader().load(bigImage.homeBigImage);
+// // 加载 homeBigImage 图片
+// const homeBigImage = new THREE.TextureLoader().load(bigImage.homeBigImage);
 
 
 class WebGL {
