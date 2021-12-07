@@ -182,7 +182,7 @@ canvas {
 }
 
 .takeToMe {
-  filter: hue-rotate(235deg);
+  /* filter: hue-rotate(235deg); */
 }
 
 .hbimg {

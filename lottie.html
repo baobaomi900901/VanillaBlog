@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/lottie-web/5.7.12/lottie.min.js"></script>
+</head>
+
+<body>
+  <div id="container" style="height: 200px;width: 200px;">
+
+  </div>
+  <button onclick="stop()">stop</button>
+  <button onclick="pause()">pause</button>
+  <button onclick="play()">play</button>
+</body>
+<div id="container">
+  <script>
+    const element = document.getElementById('container')
+    const ani = lottie.loadAnimation({
+      container: element, // the dom element that will contain the animation
+      renderer: 'svg',
+      loop: false,
+      path: './public/data7.json', // the path to the animation json
+      autoplay:false 
+    });
+    a = 1
+
+    // (function () {
+    //   ani.stop()
+    // }())
+
+    if (a == 1) {
+      ani.stop()
+    }
+
+    console.log(ani);
+    const stop = () => {
+      ani.stop()
+    }
+    const pause = () => {
+      console.log(1);
+      ani.pause()
+    }
+    const play = () => {
+      ani.play()
+    }
+  </script>
+
+</html>

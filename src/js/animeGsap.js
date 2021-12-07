@@ -1,13 +1,7 @@
 import {
     gsap
 } from 'gsap'
-
-import "./anime.js";
-import {
-    takeToMeHot
-} from "./anime.js";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// gsap.registerPlugin(ScrollTrigger);
+import lottie from 'lottie-web'; 
 
 gsap.set(".takeToMeText2", {
     y: 12,
@@ -17,8 +11,25 @@ gsap.set(".takeToMeText2", {
 
 let mouseenterTrem = true
 let mouseoutTrem = false
+let takeToMeHot = document.querySelector('.takeToMeHot')
+
+const blueBall  = lottie.loadAnimation({
+    container: document.querySelector('.lottie'), //渲染位置
+    renderer: 'svg', // 形式 svg or cavans
+    loop: false, // 是否重复
+    path: '/data.json', // 动画资源
+    autoplay: false // 初始化播放 or 停止
+})
+
+// 动画结束事件
+blueBall.onComplete = function(){
+    blueBall.stop() // 停止动画
+    console.log("onComplete");
+}
+
 takeToMeHot.addEventListener('mouseenter', function () {
     if (mouseenterTrem) {
+        blueBall.play()
         // console.log("mouseenter");
         gsap.fromTo('.takeToMeText', 0.2, {
             y: 0,
@@ -41,7 +52,6 @@ takeToMeHot.addEventListener('mouseenter', function () {
 
 takeToMeHot.addEventListener('mouseout', function () {
     if (mouseoutTrem) {
-        // console.log("mouseout");
         gsap.to(".takeToMeText2", 0.2, {
             y: 12,
             rotationX: -90
@@ -256,7 +266,7 @@ function a() {
         duration: 0.5,
         stagger: 0,
         onComplete: function () {
-            console.log("mark");
+            // console.log("mark");
         }
     })
 
