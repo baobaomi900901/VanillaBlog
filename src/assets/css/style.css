@@ -6,13 +6,13 @@
   --gray-0: #fafafa;
 }
 
-body {
+/* body {
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
-}
+} */
 
 svg:hover path{
   fill : #0042f6;
@@ -31,6 +31,10 @@ svg:hover path{
   content: "💡.";
 }
 
+.navBar{
+  z-index: 51;
+}
+
 .HomePage_content {}
 
 .HomePage_content_head {}
@@ -47,19 +51,18 @@ svg:hover path{
 
 .about {
   @apply text-white text-base uppercase py-0 px-8 grid;
-  grid-template-rows: auto 64px;
+  grid-template-rows: auto 40px;
 }
 
 .about-describe {
-  @apply border-b border-white grid items-end;
+  @apply border-b border-white grid;
 }
 
 .about-describe p {
-  @apply mb-8;
+  /* @apply mb-8; */
 }
 
 .about-linkCoord {
-  @apply text-sm flex justify-between items-center;
 }
 
 .about-linkCoord a {

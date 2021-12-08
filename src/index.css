@@ -32060,13 +32060,13 @@ video {
   --gray-0: #fafafa;
 }
 
-body {
+/* body {
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
   position: relative;
   width: 100vw;
   height: 100vh;
-}
+} */
 
 svg:hover path{
   fill : #0042f6;
@@ -32084,6 +32084,10 @@ svg:hover path{
 
 .Creativity_link:hover::before {
   content: "💡.";
+}
+
+.navBar{
+  z-index: 51;
 }
 
 .HomePage_content {
@@ -32118,27 +32122,21 @@ svg:hover path{
   text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
-  grid-template-rows: auto 64px;
+  grid-template-rows: auto 40px;
 }
 
 .about-describe {
   display: grid;
-  align-items: flex-end;
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity));
 }
 
 .about-describe p {
-  margin-bottom: 2rem;
+  /* @apply mb-8; */
 }
 
 .about-linkCoord {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .about-linkCoord a {

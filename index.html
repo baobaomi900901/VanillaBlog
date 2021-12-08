@@ -7,16 +7,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./src/index.css">
   <!-- <script src="https://cdn.bootcdn.net/ajax/libs/lottie-web/5.7.12/lottie.min.js"></script> -->
+  <script src="http://apps.bdimg.com/libs/jquery/1.8.3/jquery.js"></script>
   <title>mao&xuBlog™🪛😼</title>
   <style>
     .SATextFooter {
       opacity: 0.8;
     }
+
+    .waper {
+      overflow: auto
+    }
+
+    .box {
+      width: 400px;
+      height: 60vh;
+      color: white;
+      padding: 40px;
+    }
+
+    .a {
+      background-color: beige;
+    }
+
+    .b {
+      background: blue;
+    }
+
+    .c {
+      background: greenyellow;
+    }
+
+    .d {
+      background: gold;
+    }
   </style>
 </head>
 
-<body class="body bg-black select-none">
-  <!-- 起始  hidden--> 
+<body class="body bg-black select-none overflow-auto relative">
+  <!-- 起始  hidden-->
   <div class="StartPage absolute w-screen h-screen bg-gray-900 z-50 select-none z-50">
     <div class="StartAnimation w-full h-full relative z-50 text-white flex flex-col justify-center items-center hidden">
       <div class="SATextHead text-base mb-16" id="SATextHead">MobyTang™ 😼 Portfolio</div>
@@ -29,11 +57,11 @@
         <div class="SATextItem absolute w-full text-4xl t-6 " id="t6">Webflow Developer</div>
       </div>
       <div class="SATextFooter opacity-80" id="SATextFooter">©2021 Mading😼&🤡™ studio</div>
-      <!-- <div class="t123" id="t123">T123</div> -->
     </div>
   </div>
-  <div id="app" class=" absolute top-0 w-full hidden">
-    <div class=" absolute w-full h-20 px-16 flex items-center justify-between z-50">
+  <!-- hidden -->
+  <div id="app" class="hidden">
+    <div class="navBar fixed w-full h-20 px-16 flex items-center justify-between z-50 text-gray-300">
       <div class="flex items-center" id="logo">
         <a href="index.html">
           <img src="./src/assets/img/logo.png" alt="" class=" w-8 h-8">
@@ -41,21 +69,21 @@
       </div>
       <nav class=" grid grid-flow-col gap-6 items-center font-semibold leading-tight uppercase ">
         <a class="navBarItem" href="./index.html">
-          <span class="navmenu hover:text-dark-blue text-gray-300 mix-blend-difference">home</span>
+          <span class="navmenu hover:text-dark-blue mix-blend-difference">home</span>
         </a>
         <a class="navBarItem" href="https://baobaomi900901-blog.netlify.app/">
-          <span class="navmenu hover:text-dark-blue text-gray-300 mix-blend-difference">blog</span>
+          <span class="navmenu hover:text-dark-blue mix-blend-difference">blog</span>
         </a>
         <a class="navBarItem" href="https://baobaomi900901-blog.netlify.app/">
-          <span class="navmenu hover:text-dark-blue text-gray-300 mix-blend-difference">resume</span>
+          <span class="navmenu hover:text-dark-blue mix-blend-difference">resume</span>
         </a>
         <a class="navBarItem" href="https://github.com/baobaomi900901" target="_blank">
           <svg width="24px" height="24px" style="
-                      vertical-align: -0.125em;
-                      -ms-transform: rotate(360deg);
-                      -webkit-transform: rotate(360deg);
-                      transform: rotate(360deg);
-                    " preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 250">
+                    vertical-align: -0.125em;
+                    -ms-transform: rotate(360deg);
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                  " preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 250">
             <path
               d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46c6.397 1.185 8.746-2.777 8.746-6.158c0-3.052-.12-13.135-.174-23.83c-35.61 7.742-43.124-15.103-43.124-15.103c-5.823-14.795-14.213-18.73-14.213-18.73c-11.613-7.944.876-7.78.876-7.78c12.853.902 19.621 13.19 19.621 13.19c11.417 19.568 29.945 13.911 37.249 10.64c1.149-8.272 4.466-13.92 8.127-17.116c-28.431-3.236-58.318-14.212-58.318-63.258c0-13.975 5-25.394 13.188-34.358c-1.329-3.224-5.71-16.242 1.24-33.874c0 0 10.749-3.44 35.21 13.121c10.21-2.836 21.16-4.258 32.038-4.307c10.878.049 21.837 1.47 32.066 4.307c24.431-16.56 35.165-13.12 35.165-13.12c6.967 17.63 2.584 30.65 1.255 33.873c8.207 8.964 13.173 20.383 13.173 34.358c0 49.163-29.944 59.988-58.447 63.157c4.591 3.972 8.682 11.762 8.682 23.704c0 17.126-.148 30.91-.148 35.126c0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002C256 57.307 198.691 0 128.001 0zm-80.06 182.34c-.282.636-1.283.827-2.194.39c-.929-.417-1.45-1.284-1.15-1.922c.276-.655 1.279-.838 2.205-.399c.93.418 1.46 1.293 1.139 1.931zm6.296 5.618c-.61.566-1.804.303-2.614-.591c-.837-.892-.994-2.086-.375-2.66c.63-.566 1.787-.301 2.626.591c.838.903 1 2.088.363 2.66zm4.32 7.188c-.785.545-2.067.034-2.86-1.104c-.784-1.138-.784-2.503.017-3.05c.795-.547 2.058-.055 2.861 1.075c.782 1.157.782 2.522-.019 3.08zm7.304 8.325c-.701.774-2.196.566-3.29-.49c-1.119-1.032-1.43-2.496-.726-3.27c.71-.776 2.213-.558 3.315.49c1.11 1.03 1.45 2.505.701 3.27zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033c-1.448-.439-2.395-1.613-2.103-2.626c.301-1.01 1.747-1.484 3.207-1.028c1.446.436 2.396 1.602 2.095 2.622zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95c-1.53.034-2.769-.82-2.786-1.86c0-1.065 1.202-1.932 2.733-1.958c1.522-.03 2.768.818 2.768 1.868zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37c-1.485.271-2.861-.365-3.05-1.386c-.184-1.056.893-2.114 2.376-2.387c1.514-.263 2.868.356 3.061 1.403z"
               fill="#d1d5db" />
@@ -63,9 +91,10 @@
         </a>
       </nav>
     </div>
-    <div class="HomePage w-full flex h-screen z-10">
+    <div class="HomePage w-full flex z-10">
 
-      <div class="HomePage_left w-5/12 hidden lg:block h-screen">
+      <!-- 左边固定  bg-red-500 -->
+      <div class="HomePage_left w-4/12 h-screen hidden lg:block fixed top-0 z-50">
         <div class="h-full flex flex-col">
           <div id="leftMenuBox" class=" HomePage_left_menu bg-gray-300 flex flex-1 justify-center items-center z-10">
             <ul class="text-gray-900 text-3xl font-semibold inline-block w-1/2 h-auto">
@@ -84,68 +113,74 @@
         </div>
       </div>
 
-      <div class="HomePage_content h-screen w-full overflow-auto relative">
-
-        <div id="HomePageContentHead" class="HomePage_content_head bg-gray-50 h-screen flex flex-col">
-          <div class="Introduce flex justify-center items-center flex-1 z-10">
-            <div class="myself text-white opacity-80 uppercase leading-loose">
-              <div id="welcome" class="welcome vc text-base font-black mb-4">Welcome</div>
-              <div class="myname font-bold text-9xl">
-                <p id="myname1">i'm</p>
-                <p id="myname2">maosusu</p>
-                <p id="myname3">designer</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex h-1/5 z-10">
-            <div id="aboutMeBox" class="aboutme blue bg-dark-blue flex justify-center items-center w-1/2 flex-1">
-              <p id="aboutMe" class="text-white text-lg font-extrabold">About Me</p>
-            </div>
-            <div class="about text-white text-base uppercase py-0 px-8 grid w-1/2">
-              <div id="aboutLine" class="about-describe border-b border-white grid items-end">
-                <p id="aboutText" class="mb-8 text-3xl">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
-              </div>
-              <div class="about-linkCoord text-base flex justify-between items-center pb-3 box-border">
-                <a id="dribbbleLink" href="https://dribbble.com/MobyTang">dribbble</a>
-                <p id="myCoords" class="about-coord">114.089592,22.635423</p>
+      <div class="HomePage_content w-full flex relative w-full">
+        <div class="w-4/12 hidden lg:block"></div>
+        <div class="right relative w-full lg:w-8/12">
+          <div id="HomePageContentHead" class="HomePage_content_head bg-gray-50 h-screen flex flex-col">
+            <div class="Introduce flex justify-center items-center flex-1 z-10">
+              <div class="myself text-white opacity-80 uppercase leading-loose">
+                <div id="welcome" class="welcome vc text-base font-black mb-4">Welcome</div>
+                <div class="myname font-bold text-9xl">
+                  <p id="myname1">i'm</p>
+                  <p id="myname2">maosusu</p>
+                  <p id="myname3">designer</p>
+                </div>
               </div>
             </div>
 
-          </div>
-          <div class="marks absolute w-full h-full grid grid-cols-3 gap-1" style="z-index: 1;">
-            <div class="mark mark1 bg-gray-50 opacity-50"></div>
-            <div class="mark mark2 bg-gray-50 opacity-50"></div>
-            <div class="mark mark3 bg-gray-50 opacity-50"></div>
-          </div>
-          <div class=" w-full h-full absolute top-0 left-0" style="overflow: hidden">
-            <div class="hbimg"></div>
+            <div class="flex h-1/5 z-10">
+
+              <div id="aboutMeBox" class="aboutme blue bg-dark-blue flex justify-center items-center w-1/2 flex-1">
+                <p id="aboutMe" class="text-white text-lg font-extrabold">About Me</p>
+              </div>
+
+              <div class="about text-white text-base uppercase py-0 grid w-1/2">
+                <!-- <div id="aboutLine" class="about-describe border-b bg-red-900 w-full border-white grid items-end whitespace-nowrap">
+             <p id="aboutText" class="text-3xl">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
+              </div>-->
+                <div id="aboutLine" class="about-describe w-full h-full flex items-end">
+                  <p id="aboutText" class="text-1xl 2xl:text-2xl mb-4">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
+                </div>
+                <div class="about-linkCoord text-xs flex justify-between items-center box-border">
+                  <a id="dribbbleLink" href="https://dribbble.com/MobyTang">dribbble</a>
+                  <p id="myCoords" class="about-coord">114.089592,22.635423</p>
+                </div>
+              </div>
+
+            </div>
+            <div class=" w-full h-screen absolute top-0 left-0">
+              <div class="marks absolute w-full h-full grid grid-cols-3 gap-1" style="z-index: 1;">
+                <div class="mark mark1 bg-gray-50 opacity-50"></div>
+                <div class="mark mark2 bg-gray-50 opacity-50"></div>
+                <div class="mark mark3 bg-gray-50 opacity-50"></div>
+              </div>
+              <div class="hbimg"></div>
+            </div>
+
           </div>
 
-        </div>
-
-        <div class="homePage2 px-40 lg:pl-40 lg:pr-20 flex items-center flex-col bg-gray-200">
-          <div class="el-Indt-content w-full flex flex-col mt-32">
-            <span class="text-base font-bold">01</span>
-            <div class="text-6xl font-semibold mb-10">Maosusu.😾</div>
-            <div>
-              Our iMacs will testify to what we use them, Our iMacs will testify to
-              what we use them, Our iMacs will testify to what we use them
+          <div class="homePage2 px-40 lg:pl-40 lg:pr-20 flex items-center flex-col bg-gray-200">
+            <div class="el-Indt-content w-full flex flex-col mt-32">
+              <span class="text-base font-bold">01</span>
+              <div class="text-6xl font-semibold mb-10">Maosusu.😾</div>
+              <div>
+                Our iMacs will testify to what we use them, Our iMacs will testify to
+                what we use them, Our iMacs will testify to what we use them
+              </div>
+              <div>
+                Our iMacs will testify to what we use them, Our iMacs will testify to
+                what we use them, Our iMacs will testify to what we use them
+              </div>
+              <div>
+                Our iMacs will testify to what we use them, Our iMacs will testify to
+                what we use them, Our iMacs will testify to what we use them
+              </div>
             </div>
-            <div>
-              Our iMacs will testify to what we use them, Our iMacs will testify to
-              what we use them, Our iMacs will testify to what we use them
-            </div>
-            <div>
-              Our iMacs will testify to what we use them, Our iMacs will testify to
-              what we use them, Our iMacs will testify to what we use them
-            </div>
-          </div>
-          <div class="el-Indt-fl-content w-full mt-32">
-            <span class="text-base font-bold">02</span>
-            <div class="mb-4">Looking forward to work</div>
-            <div>
-              <div class="
+            <div class="el-Indt-fl-content w-full mt-32">
+              <span class="text-base font-bold">02</span>
+              <div class="mb-4">Looking forward to work</div>
+              <div>
+                <div class="
                         flex
                         justify-between
                         items-center
@@ -153,10 +188,10 @@
                         pb-4
                         mb-4
                       ">
-                <span class="text-4xl font-bold text-dark-blue">Industry</span>
-                <span class="text-gray-400 font-light">toB</span>
-              </div>
-              <div class="
+                  <span class="text-4xl font-bold text-dark-blue">Industry</span>
+                  <span class="text-gray-400 font-light">toB</span>
+                </div>
+                <div class="
                         flex
                         justify-between
                         items-center
@@ -164,10 +199,10 @@
                         pb-2
                         mb-4
                       ">
-                <span class="text-4xl font-bold text-dark-blue">Workplace</span>
-                <span class="text-gray-400 font-light">ShenZhen&ChangSha</span>
-              </div>
-              <div class="
+                  <span class="text-4xl font-bold text-dark-blue">Workplace</span>
+                  <span class="text-gray-400 font-light">ShenZhen&ChangSha</span>
+                </div>
+                <div class="
                         flex
                         justify-between
                         items-center
@@ -175,80 +210,106 @@
                         pb-2
                         mb-4
                       ">
-                <span class="text-4xl font-bold text-dark-blue">Anytime</span>
-                <span class="text-gray-400 font-light">995</span>
-              </div>
-              <ul class="text-base mt-32 font-bold">
-                <li>3D</li>
-                <li>UI/UX Design</li>
-                <li>Motion Design</li>
-                <li>Interaction Design</li>
-                <li>Brand Design</li>
-                <li>Web deveiopment</li>
-              </ul>
-              <div class="w-full text-center mt-24 relative">
-                Good things comest to down-scrollers 🧼 😆
-              </div>
-
-              <div class="w-full mt-24">
-                <div class="Inspirations-title relative text-black mb-8 z-50">
-                  <span class="text-base font-bold">03</span>
-                  <div class="text-6xl font-semibold mb-4 mix-blend-difference">Inspirations</div>
-                  <span class="text-base font-bold mr-4 text-dark-blue">2020 ~ new </span>
-                  <span class="text-base font-bold text-gray-400">Involve in product design process</span>
+                  <span class="text-4xl font-bold text-dark-blue">Anytime</span>
+                  <span class="text-gray-400 font-light">995</span>
+                </div>
+                <ul class="text-base mt-32 font-bold">
+                  <li>3D</li>
+                  <li>UI/UX Design</li>
+                  <li>Motion Design</li>
+                  <li>Interaction Design</li>
+                  <li>Brand Design</li>
+                  <li>Web deveiopment</li>
+                </ul>
+                <div class="w-full text-center mt-24 relative">
+                  Good things comest to down-scrollers 🧼 😆
                 </div>
 
-                <main class="inspirations">
-                  <ul class="ul">
-                    <li><span>Industry1</span> <span>toB</span></li>
-                    <li><span>Industry2</span> <span>toB</span></li>
-                    <li><span>Industry3</span> <span>toB</span></li>
-                    <li><span>Industry4</span> <span>toB</span></li>
-                    <li><span>Industry5</span> <span>toB</span></li>
-                  </ul>
-                </main>
-              </div>
+                <div class="w-full mt-24">
+                  <div class="Inspirations-title relative text-black mb-8 z-50">
+                    <span class="text-base font-bold">03</span>
+                    <div class="text-6xl font-semibold mb-4 mix-blend-difference">Inspirations</div>
+                    <span class="text-base font-bold mr-4 text-dark-blue">2020 ~ new </span>
+                    <span class="text-base font-bold text-gray-400">Involve in product design process</span>
+                  </div>
 
-              <div class="w-full mt-24">
-                <div class="Inspirations-title relative text-black mb-8 z-50">
-                  <span class="text-base font-bold">04</span>
-                  <br>
-                  <span class="text-base font-bold mr-4 text-dark-blue">2017 ~ 2019 </span>
-                  <span class="text-base font-bold text-gray-400">Involve in product design process</span>
+                  <main class="inspirations">
+                    <ul class="ul">
+                      <li><span>Industry1</span> <span>toB</span></li>
+                      <li><span>Industry2</span> <span>toB</span></li>
+                      <li><span>Industry3</span> <span>toB</span></li>
+                      <li><span>Industry4</span> <span>toB</span></li>
+                      <li><span>Industry5</span> <span>toB</span></li>
+                    </ul>
+                  </main>
                 </div>
 
-                <main class="inspirations">
-                  <ul class="ul2">
-                    <li><span>Vodafone</span> <span>toB</span></li>
-                    <li><span>Industry2</span> <span>toB</span></li>
-                    <li><span>Industry3</span> <span>toB</span></li>
-                    <li><span>Industry4</span> <span>toB</span></li>
-                    <li><span>Industry5</span> <span>toB</span></li>
-                  </ul>
-                </main>
-              </div>
-              <div class="w-full text-center mt-24 relative z-50">
-                Really 🐂 B huh 👏 😆
-              </div>
-              <br />
-              <div class="flex justify-center z-50 relative takeToMeBox flex">
-                <div class="takeToMeHot absolute "></div>
-                <div class="absolute w-80 h-32  flex items-center flex-col text-white font-bold" style="z-index: 51; transform: translate(-50%, -50%);top: 50%;left: 50%;">
-                  <div class="takeToMeText w-full text-center relative">LET ME WORK</div>
-                  <div class="takeToMeText2 w-full text-center tracking-wide relative" style="text-indent: 1rem">TALK TO ME ✍️</div>
+                <div class="w-full mt-24">
+                  <div class="Inspirations-title relative text-black mb-8 z-50">
+                    <span class="text-base font-bold">04</span>
+                    <br>
+                    <span class="text-base font-bold mr-4 text-dark-blue">2017 ~ 2019 </span>
+                    <span class="text-base font-bold text-gray-400">Involve in product design process</span>
+                  </div>
+
+                  <main class="inspirations">
+                    <ul class="ul2">
+                      <li><span>Vodafone</span> <span>toB</span></li>
+                      <li><span>Industry2</span> <span>toB</span></li>
+                      <li><span>Industry3</span> <span>toB</span></li>
+                      <li><span>Industry4</span> <span>toB</span></li>
+                      <li><span>Industry5</span> <span>toB</span></li>
+                    </ul>
+                  </main>
                 </div>
-                <div class="lottie takeToMe w-80 h-80 z-50"></div>
+                <div class="w-full text-center mt-24 relative z-50">
+                  Really 🐂 B huh 👏 😆
+                </div>
+                <br />
+                <div class="flex justify-center z-50 relative takeToMeBox flex">
+                  <div class="takeToMeHot absolute "></div>
+                  <div class="absolute w-80 h-32  flex items-center flex-col text-white font-bold"
+                    style="z-index: 51; transform: translate(-50%, -50%);top: 50%;left: 50%;">
+                    <div class="takeToMeText w-full text-center relative">LET ME WORK</div>
+                    <div class="takeToMeText2 w-full text-center tracking-wide relative" style="text-indent: 1rem">TALK
+                      TO
+                      ME
+                      ✍️</div>
+                  </div>
+                  <div class="lottie takeToMe w-80 h-80 z-50"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>
   <!-- <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.8.1/build/player/lottie.min.js" type="module"></script> -->
-  <script src="./src/js/app.js" type="module"></script>
-  <!-- <script src="./src/js/anime.js" type="module"></script> -->
+  <!-- <script src="./src/js/app.js" type="module"></script> -->
   <script src="./src/js/animeGsap.js" type="module"></script>
+  <script>
+    function scroll() {
+      var top = $(".homePage2").offset().top; //获取导航栏变色的位置距顶部的高度
+      var scrollTop = $(window).scrollTop(); //获取当前窗口距顶部的高度
+      let svg = document.querySelector('.navBarItem path')
+      if (scrollTop + 40 < top) {
+        $('.navBar').addClass("text-gray-300")
+        $('.navBar').removeClass("text-gray-900")
+        svg.setAttribute("fill", "#d1d5db")
+        // console.log(svg);
+        // console.log(svg.getAttribute("fill"));
+      } else {
+        $('.navBar').addClass("text-gray-900");
+        svg.setAttribute("fill", "##111827")
+      }
+    }
+    $(window).on('scroll', function () {
+      scroll()
+    });
+  </script>
 
 </body>
 

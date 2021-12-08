@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import lottie from 'lottie-web'; 
 
+// bottom ball + text
 gsap.set(".takeToMeText", {
     y: 52,
     rotationX: 0
@@ -84,60 +85,60 @@ setTimeout(() => {
     }())
     // startAnime()
     var allAnimeLine = gsap.timeline({});
-    allAnimeLine.add(line); 
-    allAnimeLine.add(homePage1);
+    allAnimeLine.add(StartPageLine,{}); 
+    allAnimeLine.add(homePage1Line,'-=3');
+
+    // overflow-auto
 }, 1000)
 
 // 起始动画
 // function a() {
-    let SATextHeadEnt = EnterAnime("SATextHead")
-    let SATextFooterEnt = EnterAnime("SATextFooter")
-    let t1Ent = EnterAnime("t1")
-    let t1Out = outAnime("t1")
-    let t2Ent = EnterAnime("t2")
-    let t2Out = outAnime("t2")
-    let t3Ent = EnterAnime("t3")
-    let t3Out = outAnime("t3")
-    let t4Ent = EnterAnime("t4")
-    let t4Out = outAnime("t4")
-    let t5Ent = EnterAnime("t5")
-    let t5Out = outAnime("t5")
-    let t6Ent = EnterAnime("t6")
-    let t6Out = outAnime("t6")
-    let SATextHeadOut = outAnime("SATextHead")
-    let SATextFooterOut = outAnime("SATextFooter")
+    let SATextHeadEnt = EnterAnime("SATextHead",0.2)
+    let SATextFooterEnt = EnterAnime("SATextFooter",0.2)
+    let t1Ent = EnterAnime("t1",0.2,null,0.4)
+    let t1Out = outAnime("t1",0.2,null,0.4)
+    let t2Ent = EnterAnime("t2",0.2,null,0.4)
+    let t2Out = outAnime("t2",0.2,null,0.4)
+    let t3Ent = EnterAnime("t3",0.2,null,0.4)
+    let t3Out = outAnime("t3",0.2,null,0.4)
+    let t4Ent = EnterAnime("t4",0.2,null,0.4)
+    let t4Out = outAnime("t4",0.2,null,0.4)
+    let t5Ent = EnterAnime("t5",0.2,null,0.4)
+    let t5Out = outAnime("t5",0.2,null,0.4)
+    let t6Ent = EnterAnime("t6",0.2,null,0.4)
+    let t6Out = outAnime("t6",0.2,null,0.4)
+    let SATextHeadOut = outAnime("SATextHead",0.2)
+    let SATextFooterOut = outAnime("SATextFooter",0.2)
 
-    var line = gsap.timeline({
+    var StartPageLine = gsap.timeline({
         delay: 2
     });
 
-    line.add(SATextHeadEnt);
-    line.add(SATextFooterEnt, "-=0.8");
-    line.add(t1Ent, "-=0.5");
-    line.add(t1Out);
-    line.add(t2Ent);
-    line.add(t2Out);
-    line.add(t3Ent);
-    line.add(t3Out);
-    line.add(t4Ent);
-    line.add(t4Out);
-    line.add(t5Ent);
-    line.add(t5Out);
-    line.add(t6Ent);
-    line.add(t6Out);
-    line.add(SATextHeadOut);
-    line.add(SATextFooterOut, "-=0.5");
-    line.to(".StartPage", {
+    StartPageLine.add(SATextHeadEnt);
+    StartPageLine.add(SATextFooterEnt, "-=0.8");
+    StartPageLine.add(t1Ent, "-=0.5");
+    StartPageLine.add(t1Out);
+    StartPageLine.add(t2Ent);
+    StartPageLine.add(t2Out);
+    StartPageLine.add(t3Ent);
+    StartPageLine.add(t3Out);
+    StartPageLine.add(t4Ent);
+    StartPageLine.add(t4Out);
+    StartPageLine.add(t5Ent);
+    StartPageLine.add(t5Out);
+    StartPageLine.add(t6Ent);
+    StartPageLine.add(t6Out);
+    StartPageLine.add(SATextHeadOut);
+    StartPageLine.add(SATextFooterOut, "-=0.5");
+    StartPageLine.to(".StartPage", {
         opacity: 0,
         duration: 2,
         onComplete: function () {
             let StartPage = document.querySelector('.StartPage')
             StartPage.classList.add('hidden')
-            console.log("end");
+            console.log("StartPage");
         }
     })
-
-//     return line
 
 // }
 
@@ -194,7 +195,7 @@ setTimeout(() => {
         scale: 1.05,
         opacity: 1,
         duration: 1.2,
-        ease: "circ.inOut"
+        ease: "none"
         // ease: "elastic.out(1, 1)",
     })
 
@@ -255,10 +256,10 @@ setTimeout(() => {
         scale: 1.2,
         opacity: 0,
     }, {
-        scale: 1.05,
+        scale: 1,
         opacity: 1,
         duration: 1.2,
-        ease: "circ.inOut"
+        ease: "none"
         // ease: "elastic.out(1, 1)",
     })
 
@@ -281,34 +282,37 @@ setTimeout(() => {
     let myname2 = EnterAnime("myname2", 0.5, 0.02, null, 60)
     let myname3 = EnterAnime("myname3", 0.5, 0.02, null, 60)
     let aboutMe = EnterAnime("aboutMe", 0.5, 0.02)
-    let aboutText = EnterAnime("aboutText", 0.5, 0.01)
+    let aboutText = EnterAnime("aboutText", 0.4, 0.01)
     let dribbbleLink = EnterAnime("dribbbleLink", 0.5, 0.01)
     let myCoords = EnterAnime("myCoords", 0.5, 0.01)
 
-    let homePage1 = gsap.timeline({
-        delay: 1
+    let homePage1Line = gsap.timeline({
+        delay: 1,
+        onComplete:function () {
+            console.log('homePage1');
+        }
     });
 
-    homePage1.add(logo, 1);
-    homePage1.add(navbar, 1);
-    homePage1.add(leftMenuBox, 0);
-    homePage1.add(leftimgbox, 0);
-    homePage1.add(leftimg, 1.2);
-    homePage1.add(HomePageContentHead, 0.4);
-    homePage1.add(menu, 1.4);
-    homePage1.add(menuItem, 1.6);
-    homePage1.add(welcome, 1.5); // "-=0.8"
-    homePage1.add(myname1, 1.6); // "-=0.4"
-    homePage1.add(myname2, 1.7); // "-=0.4"
-    homePage1.add(myname3, 1.8); // "-=0.4"
-    homePage1.add(aboutMeBox, 1);
-    homePage1.add(aboutLine, 1.4);
-    homePage1.add(mark, 1.4);
-    homePage1.add(hbimg, 1.2);
-    homePage1.add(aboutMe, 1.9);
-    homePage1.add(aboutText, 2);
-    homePage1.add(dribbbleLink,2.1);
-    homePage1.add(myCoords, 2.2);
+    homePage1Line.add(logo, 1);
+    homePage1Line.add(navbar, 1);
+    homePage1Line.add(leftMenuBox, 0);
+    homePage1Line.add(leftimgbox, 0);
+    homePage1Line.add(leftimg, 1.2);
+    homePage1Line.add(HomePageContentHead, 0.4);
+    homePage1Line.add(menu, 1.4);
+    homePage1Line.add(menuItem, 1.6);
+    homePage1Line.add(welcome, 1.5); // "-=0.8"
+    homePage1Line.add(myname1, 1.6); // "-=0.4"
+    homePage1Line.add(myname2, 1.7); // "-=0.4"
+    homePage1Line.add(myname3, 1.8); // "-=0.4"
+    homePage1Line.add(aboutMeBox, 1);
+    homePage1Line.add(aboutLine, 1.4);
+    homePage1Line.add(mark, 1.4);
+    homePage1Line.add(hbimg, 1.2);
+    homePage1Line.add(aboutMe, 1.9);
+    homePage1Line.add(aboutText, 2);
+    homePage1Line.add(dribbbleLink,2.1);
+    homePage1Line.add(myCoords, 2.2);
 
 
 // 提取文字拆分
@@ -353,7 +357,7 @@ function EnterAnime(el, duration = 0.75, stagger = 0.01, delayTime = 0, y = 10) 
             delay: `${delayTime}`,
             opacity: 1,
             rotateX: 0,
-            ease: "circ.out",
+            ease: "none",
             // ease: "elastic.out(1, 0.75)"
         }
     );
@@ -387,28 +391,24 @@ function outAnime(el, duration = 0.5, stagger = 0.01, delayTime = 0) {
     }
 }
 
-let el = document.querySelectorAll('nav')
-
 // navmenu[0].style.color = "red"
 // navmenu.forEach(element => {
 //     element.style.color = "red"
 // });
 
-console.log(el);
 
-
-// gsap.fromTo(".homePage2", {
-// },{
-//     x: 400,
-//     rotation: 360,
+// 滚轴
+// gsap.to(".navBar",{
+//     // x: 400,
+//     // rotation: 360,
 //     duration: 1,
 //     color: "#020202",
 //     // backgroundColor: "blue",
 //     scrollTrigger: {
 //         markers: "true", // 启用标尺
-//         trigger: '.homePage2',
+//         trigger: '.b',
 //         start: "start center",
-//         end: "+=200",
+//         // end: "+=200",
 //         toggleActions: 'play pause resume pause', //restart
 //     }
 // })
