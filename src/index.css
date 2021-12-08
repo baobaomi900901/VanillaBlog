@@ -32270,26 +32270,10 @@ canvas {
 }
 
 .takeToMeText {
-  position: absolute;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 51;
 }
 
 .takeToMeText2 {
-  position: absolute;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 51;
 }
 

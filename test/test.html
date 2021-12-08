@@ -12,66 +12,85 @@
 
     <style>
         .waper {
+            overflow: auto
         }
-        .box{
+
+        .box {
             width: 400px;
             height: 60vh;
             color: white;
             padding: 40px;
         }
 
-        .a{
-            background: red;
+        .a {
+            background-color: beige;
         }
-        .b{
+
+        .b {
             background: blue;
         }
-        .c{
+
+        .c {
             background: greenyellow;
         }
-        .d{
+
+        .d {
             background: gold;
         }
     </style>
 </head>
 
-<body class="flex justify-center items-start h-screen ">
-    <div class="waper">
-        <div class="box a">AA</div>
-        <div class="box b">BB</div>
-        <div class="box c">CC</div>
-        <div class="box d">dd</div>
-        <div class="box e">dd</div>
-        <div class="box f">dd</div>
-        <div class="box g">dd</div>
+<body class="overflow-auto relative">
+    <div class="left w-1/5 h-screen bg-red-500 float-left fixed top-0 z-50"> left</div>
+    <div class="waper flex relative w-full bg-red-50">
+        <div class="w-1/5" ></div>
+        <div class="right relative w-4/5">
+            <div class="box a">AA</div>
+            <div class="box b">BB</div>
+            <div class="box c">CC</div>
+            <div class="box d">dd</div>
+            <div class="box e">dd</div>
+            <div class="box f">dd</div>
+            <div class="box g">dd</div>
+        </div>
     </div>
+
 
 
 
     <script>
         // gsap.registerPlugin(ScrollTrigger)
-        gsap.to(".a",{
-            x:400,
+        gsap.fromTo(".a", {}, {
+            x: 400,
             rotation: 360,
-            duration: 1
+            duration: 1,
+            backgroundColor: "blue",
+            scrollTrigger: {
+                markers: "true", // 启用标尺
+                trigger: '.b',
+                start: "start center",
+                end: "+=200",
+                scrub: 1, // 擦洗动画, true, 整体动画时长
+                toggleActions: 'play pause resume pause', //restart
+            }
         })
 
-        gsap.to(".c",{
-            // scrollTrigger:'.d',
-            scrollTrigger:{
-                trigger: '.b',
-                start:"20px center",  //前一个值是元素属性(也可以 200px), 后一个值是窗口属性
-                end:"+=100", // 结束点
-                markers: "true",// 启用标尺
-                toggleActions:'play pause resume pause', //restart
-                scrub:1, // 擦洗动画, true, 整体动画时长
-                pin: true,
-                pinSpacing: false
-            },
-            x:400,
-            rotation: 360,
-            duration: 1
-        })
+        // gsap.to(".c",{
+        //     // scrollTrigger:'.d',
+        //     scrollTrigger:{
+        //         trigger: '.a',
+        //         start:"start center",  //前一个值是元素属性(也可以 200px), 后一个值是窗口属性
+        //         end:"+=100", // 结束点
+        //         markers: "false",// 启用标尺
+        //         toggleActions:'play pause resume pause', //restart
+        //         scrub:1, // 擦洗动画, true, 整体动画时长
+        //         pin: true,
+        //         pinSpacing: false
+        //     },
+        //     x:400,
+        //     rotation: 360,
+        //     duration: 1
+        // })
     </script>
 </body>
 

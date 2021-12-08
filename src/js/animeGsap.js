@@ -1,13 +1,19 @@
 import {
     gsap
 } from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import lottie from 'lottie-web'; 
 
-gsap.set(".takeToMeText2", {
-    y: 12,
-    rotationX: -90
+gsap.set(".takeToMeText", {
+    y: 52,
+    rotationX: 0
 });
 
+gsap.set(".takeToMeText2", {
+    y: 32,
+    rotationX: -90
+});
 
 let mouseenterTrem = true
 let mouseoutTrem = false
@@ -32,14 +38,14 @@ takeToMeHot.addEventListener('mouseenter', function () {
         blueBall.play()
         // console.log("mouseenter");
         gsap.fromTo('.takeToMeText', 0.2, {
-            y: 0,
+            y: 52,
             rotationX: 0
         }, {
-            y: -12,
+            y: 40,
             rotationX: 90,
         });
         gsap.to(".takeToMeText2", 0.2, {
-            y: 0,
+            y: 24,
             rotationX: 0,
             delay: 0.15,
             onComplete: function () {
@@ -53,11 +59,11 @@ takeToMeHot.addEventListener('mouseenter', function () {
 takeToMeHot.addEventListener('mouseout', function () {
     if (mouseoutTrem) {
         gsap.to(".takeToMeText2", 0.2, {
-            y: 12,
+            y: 32,
             rotationX: -90
         });
         gsap.to(".takeToMeText", 0.2, {
-            y: 0,
+            y: 52,
             rotationX: 0,
             delay: 0.15,
             onComplete: function () {
@@ -78,12 +84,12 @@ setTimeout(() => {
     }())
     // startAnime()
     var allAnimeLine = gsap.timeline({});
-    // allAnimeLine.add(a); 
+    allAnimeLine.add(line); 
     allAnimeLine.add(homePage1);
 }, 1000)
 
 // 起始动画
-function a() {
+// function a() {
     let SATextHeadEnt = EnterAnime("SATextHead")
     let SATextFooterEnt = EnterAnime("SATextFooter")
     let t1Ent = EnterAnime("t1")
@@ -131,9 +137,9 @@ function a() {
         }
     })
 
-    return line
+//     return line
 
-}
+// }
 
 // homePage-1-Anime
 
@@ -380,3 +386,29 @@ function outAnime(el, duration = 0.5, stagger = 0.01, delayTime = 0) {
         return anime
     }
 }
+
+let el = document.querySelectorAll('nav')
+
+// navmenu[0].style.color = "red"
+// navmenu.forEach(element => {
+//     element.style.color = "red"
+// });
+
+console.log(el);
+
+
+// gsap.fromTo(".homePage2", {
+// },{
+//     x: 400,
+//     rotation: 360,
+//     duration: 1,
+//     color: "#020202",
+//     // backgroundColor: "blue",
+//     scrollTrigger: {
+//         markers: "true", // 启用标尺
+//         trigger: '.homePage2',
+//         start: "start center",
+//         end: "+=200",
+//         toggleActions: 'play pause resume pause', //restart
+//     }
+// })
