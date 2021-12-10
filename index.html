@@ -43,7 +43,7 @@
   </style>
 </head>
 
-<body class="body bg-black select-none overflow-auto relative">
+<body class="body bg-black select-none relative overflow-hidden">
   <!-- 起始  hidden-->
   <div class="StartPage absolute w-screen h-screen bg-gray-900 z-50 select-none z-50" style="z-index: 99;">
     <div class="StartAnimation w-full h-full relative z-50 text-white flex flex-col justify-center items-center hidden">
@@ -60,7 +60,7 @@
     </div>
   </div>
   <!-- hidden -->
-  <div id="app" class="hidden">
+  <div id="app" class="">
     <div class="navBar fixed w-full h-20 px-16 flex items-center justify-between z-50 text-gray-300">
       <div class="flex items-center" id="logo">
         <a href="index.html">
@@ -94,15 +94,15 @@
     <div class="HomePage w-full flex z-10">
 
       <!-- 左边固定  bg-red-500 -->
-      <div class="HomePage_left w-4/12 h-screen hidden lg:block fixed top-0 z-50">
+      <div class="HomePage_left w-4/12 h-screen hidden lg:block fixed top-0">
         <div class="h-full flex flex-col">
           <div id="leftMenuBox" class=" HomePage_left_menu bg-gray-300 flex flex-1 justify-center items-center z-10">
             <ul class="text-gray-900 text-3xl font-semibold inline-block w-1/2 h-auto">
               <h3 class="menu text-base text-gray-500 mb-10 uppercase">Menu</h3>
               <li class="menuItem Home_link mb-3"><a href="http://www.baidu.com">Home</a></li>
-              <li class="menuItem Porfolio_link mb-3"><a href="http://www.baidu.com">Porfolio</a></li>
-              <li class="menuItem Work_link mb-3"><a href="http://www.baidu.com">Work</a></li>
-              <li class="menuItem Creativity_link mb-3"><a href="http://www.baidu.com">Creativity</a></li>
+              <li class="menuItem Porfolio_link mb-3"><a href="http://www.baidu.com">Introduce</a></li>
+              <li class="menuItem Work_link mb-3"><a href="http://www.baidu.com">Porfolio</a></li>
+              <li class="menuItem Creativity_link mb-3"><a href="http://www.baidu.com">Contact Us</a></li>
             </ul>
           </div>
 
@@ -116,7 +116,7 @@
       <div class="HomePage_content w-full flex relative w-full">
         <div class="w-4/12 hidden lg:block"></div>
         <div class="right relative w-full lg:w-8/12">
-          <div id="HomePageContentHead" class="HomePage_content_head bg-gray-50 h-screen flex flex-col">
+          <div id="HomePageContentHead" class="HomePage_content_head  h-screen flex flex-col">
             <div class="Introduce flex justify-center items-center flex-1 z-10">
               <div class="myself text-white opacity-80 uppercase leading-loose">
                 <div id="welcome" class="welcome vc text-base font-black mb-4">Welcome</div>
@@ -127,7 +127,6 @@
                 </div>
               </div>
             </div>
-
             <div class="flex h-1/5 z-10">
 
               <div id="aboutMeBox" class="aboutme blue bg-dark-blue flex justify-center items-center w-1/2 flex-1">
@@ -139,7 +138,8 @@
              <p id="aboutText" class="text-3xl">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
               </div>-->
                 <div id="aboutLine" class="about-describe w-full h-full flex items-end">
-                  <p id="aboutText" class="text-1xl 2xl:text-2xl mb-4">We're a 3d/motion /interaction /UI /UX & webflow developer.</p>
+                  <p id="aboutText" class="text-1xl 2xl:text-2xl mb-4">We're a 3d/motion /interaction /UI /UX & webflow
+                    developer.</p>
                 </div>
                 <div class="about-linkCoord text-xs flex justify-between items-center box-border">
                   <a id="dribbbleLink" href="https://dribbble.com/MobyTang">dribbble</a>
@@ -148,7 +148,7 @@
               </div>
 
             </div>
-            <div class=" w-full h-screen absolute top-0 left-0">
+            <div class=" w-full h-screen absolute top-0 left-0 bg-gray-50">
               <div class="marks absolute w-full h-full grid grid-cols-3 gap-1" style="z-index: 1;">
                 <div class="mark mark1 bg-gray-50 opacity-50"></div>
                 <div class="mark mark2 bg-gray-50 opacity-50"></div>
@@ -160,123 +160,143 @@
           </div>
 
           <div class="homePage2 px-40 lg:pl-40 lg:pr-20 flex items-center flex-col bg-gray-200">
-            <div class="el-Indt-content w-full flex flex-col mt-32">
-              <span class="text-base font-bold">01</span>
-              <div class="text-6xl font-semibold mb-10">Maosusu.😾</div>
-              <div>
-                Our iMacs will testify to what we use them, Our iMacs will testify to
-                what we use them, Our iMacs will testify to what we use them
-              </div>
-              <div>
-                Our iMacs will testify to what we use them, Our iMacs will testify to
-                what we use them, Our iMacs will testify to what we use them
-              </div>
-              <div>
-                Our iMacs will testify to what we use them, Our iMacs will testify to
-                what we use them, Our iMacs will testify to what we use them
+            <div id="el-content-one" class="el-Indt-content w-full flex flex-col mt-32">
+              <span id="el-content-one-1" class="text-base font-bold">01</span>
+              <div id="el-content-one-2" class="el-content-one-2 text-6xl font-semibold mb-10">Maosusu.😾</div>
+              <div class="el-content-one-3 text-2xl break-all" style="max-width: 640px;">
+                <div id="el-content-one-3">Our iMacs will testify to what we use them, Our iMacs will testi</div>
+                <div id="el-content-one-4">Our iMacs will testify to what we use them, Our iMacs will testi</div>
+                <div id="el-content-one-5">Our iMacs will testify to what we use them, Our iMacs will testi</div>
               </div>
             </div>
+
             <div class="el-Indt-fl-content w-full mt-32">
-              <span class="text-base font-bold">02</span>
-              <div class="mb-4">Looking forward to work</div>
+              <div id="el-content-two">
+                <span id="el-content-two-1" class="text-base font-bold">02</span>
+                <div id="el-content-two-2" class="mb-4">Looking forward to work</div>
+                <div class="w-full flex justify-between items-center pb-4 mb-4 relative">
+                  <span id="el-content-two-3" class="text-4xl font-bold text-dark-blue">Industry</span>
+                  <span id="el-content-two-4" class="text-gray-400 font-light">toB</span>
+                  <div id="el-content-two-5" class="line w-full border-b absolute bottom-0"></div>
+                </div>
+                <div class="w-full flex justify-between items-center pb-4 mb-4 relative">
+                  <span id="el-content-two-6" class="text-4xl font-bold text-dark-blue">Workplace</span>
+                  <span id="el-content-two-7" class="text-gray-400 font-light">ShenZhen&ChangSha</span>
+                  <div id="el-content-two-8" class="line w-full border-b absolute bottom-0"></div>
+                </div>
+                <div class="w-full flex justify-between items-center pb-4 mb-4 relative">
+                  <span id="el-content-two-9" class="text-4xl font-bold text-dark-blue">Anytime</span>
+                  <span id="el-content-two-10" class="text-gray-400 font-light">995</span>
+                  <div id="el-content-two-11" class="line w-full border-b absolute bottom-0"></div>
+                </div>
+              </div>
+
               <div>
-                <div class="
-                        flex
-                        justify-between
-                        items-center
-                        border-b border-gray-300
-                        pb-4
-                        mb-4
-                      ">
-                  <span class="text-4xl font-bold text-dark-blue">Industry</span>
-                  <span class="text-gray-400 font-light">toB</span>
-                </div>
-                <div class="
-                        flex
-                        justify-between
-                        items-center
-                        border-b border-gray-300
-                        pb-2
-                        mb-4
-                      ">
-                  <span class="text-4xl font-bold text-dark-blue">Workplace</span>
-                  <span class="text-gray-400 font-light">ShenZhen&ChangSha</span>
-                </div>
-                <div class="
-                        flex
-                        justify-between
-                        items-center
-                        border-b border-gray-300
-                        pb-2
-                        mb-4
-                      ">
-                  <span class="text-4xl font-bold text-dark-blue">Anytime</span>
-                  <span class="text-gray-400 font-light">995</span>
-                </div>
+
                 <ul class="text-base mt-32 font-bold">
-                  <li>3D</li>
-                  <li>UI/UX Design</li>
-                  <li>Motion Design</li>
-                  <li>Interaction Design</li>
-                  <li>Brand Design</li>
-                  <li>Web deveiopment</li>
+                  <li id="el-content-two-12">3D</li>
+                  <li id="el-content-two-13">UI/UX Design</li>
+                  <li id="el-content-two-14">Motion Design</li>
+                  <li id="el-content-two-15">Interaction Design</li>
+                  <li id="el-content-two-16">Brand Design</li>
+                  <li id="el-content-two-17">Web deveiopment</li>
                 </ul>
-                <div class="w-full text-center mt-24 relative">
+                <div id="el-content-two-18" class="w-full text-center mt-24 relative">
                   Good things comest to down-scrollers 🧼 😆
                 </div>
 
-                <div class="w-full mt-24">
+                <div id="el-content-three" class="w-full mt-24">
                   <div class="Inspirations-title relative text-black mb-8 z-50">
-                    <span class="text-base font-bold">03</span>
-                    <div class="text-6xl font-semibold mb-4 mix-blend-difference">Inspirations</div>
-                    <span class="text-base font-bold mr-4 text-dark-blue">2020 ~ new </span>
-                    <span class="text-base font-bold text-gray-400">Involve in product design process</span>
+                    <span id="el-content-three-1" class="text-base font-bold">03</span>
+                    <div id="el-content-three-2" class="text-6xl font-semibold mb-4 mix-blend-difference">Inspirations
+                    </div>
+                    <span id="el-content-three-3" class="text-base font-bold mr-4 text-dark-blue">2020 ~ new </span>
+                    <span id="el-content-three-4" class="
+                    text-base font-bold text-gray-400">Involve in product design</span>
                   </div>
 
                   <main class="inspirations">
                     <ul class="ul">
-                      <li><span>Industry1</span> <span>toB</span></li>
-                      <li><span>Industry2</span> <span>toB</span></li>
-                      <li><span>Industry3</span> <span>toB</span></li>
-                      <li><span>Industry4</span> <span>toB</span></li>
-                      <li><span>Industry5</span> <span>toB</span></li>
+                      <li class="relative flex items-center justify-between pb-4 mb-4">
+                        <span id="el-content-three-5" class="content-title">Industry1</span> <span
+                          id="el-content-three-6">toB</span>
+                        <div id="el-content-three-7" class="line">
+                        </div>
+                      </li>
+                      <li><span id="el-content-three-8" class="content-title">Industry2</span> <span
+                          id="el-content-three-9">toB</span>
+                        <div id="el-content-three-10" class="line"></div>
+                      </li>
+                      <li><span id="el-content-three-11" class="content-title">Industry3</span> <span
+                          id="el-content-three-12">toB</span>
+                        <div id="el-content-three-13" class="line"></div>
+                      </li>
+                      <li><span id="el-content-three-14" class="content-title">Industry4</span> <span
+                          id="el-content-three-15">toB</span>
+                        <div id="el-content-three-16" class="line"></div>
+                      </li>
+                      <li><span id="el-content-three-17" class="content-title">Industry5</span> <span
+                          id="el-content-three-18">toB</span>
+                        <div id="el-content-three-19" class="line"></div>
+                      </li>
                     </ul>
                   </main>
                 </div>
 
-                <div class="w-full mt-24">
+                <div id="el-content-four" class="w-full mt-24">
                   <div class="Inspirations-title relative text-black mb-8 z-50">
-                    <span class="text-base font-bold">04</span>
+                    <span id="el-content-four-1" class="text-base font-bold">04</span>
                     <br>
-                    <span class="text-base font-bold mr-4 text-dark-blue">2017 ~ 2019 </span>
-                    <span class="text-base font-bold text-gray-400">Involve in product design process</span>
+                    <span id="el-content-four-2" class="text-base font-bold mr-4 text-dark-blue">2017 ~ 2019 </span>
+                    <span id="el-content-four-3" class="
+                    text-base font-bold text-gray-400">Involve in product design</span>
                   </div>
 
                   <main class="inspirations">
                     <ul class="ul2">
-                      <li><span>Vodafone</span> <span>toB</span></li>
-                      <li><span>Industry2</span> <span>toB</span></li>
-                      <li><span>Industry3</span> <span>toB</span></li>
-                      <li><span>Industry4</span> <span>toB</span></li>
-                      <li><span>Industry5</span> <span>toB</span></li>
+                      <li class="relative flex items-center justify-between pb-4 mb-4">
+                        <span id="el-content-four-4" class="content-title">Industry1</span> <span
+                          id="el-content-four-5">toB</span>
+                        <div id="el-content-four-6" class="line">
+                        </div>
+                      </li>
+                      <li><span id="el-content-four-7" class="content-title">Industry2</span> <span
+                          id="el-content-four-8">toB</span>
+                        <div id="el-content-four-9" class="line"></div>
+                      </li>
+                      <li><span id="el-content-four-10" class="content-title">Industry3</span> <span
+                          id="el-content-four-11">toB</span>
+                        <div id="el-content-four-12" class="line"></div>
+                      </li>
+                      <li><span id="el-content-four-13" class="content-title">Industry4</span> <span
+                          id="el-content-four-14">toB</span>
+                        <div id="el-content-four-15" class="line"></div>
+                      </li>
+                      <li><span id="el-content-four-16" class="content-title">Industry5</span> <span
+                          id="el-content-four-17">toB</span>
+                        <div id="el-content-four-18" class="line"></div>
+                      </li>
                     </ul>
                   </main>
                 </div>
-                <div class="w-full text-center mt-24 relative z-50">
+                <div id="el-content-four-19" class="w-full text-center mt-24 relative z-50">
                   Really 🐂 B huh 👏 😆
                 </div>
                 <br />
-                <div class="flex justify-center z-50 relative takeToMeBox flex">
-                  <div class="takeToMeHot absolute "></div>
-                  <div class="absolute w-80 h-32  flex items-center flex-col text-white font-bold"
-                    style="z-index: 51; transform: translate(-50%, -50%);top: 50%;left: 50%;">
-                    <div class="takeToMeText w-full text-center relative">LET ME WORK</div>
-                    <div class="takeToMeText2 w-full text-center tracking-wide relative" style="text-indent: 1rem">TALK
-                      TO
-                      ME
-                      ✍️</div>
+                <div class="" style="height: 400px;">
+                  <div id="blueBallBox" class="flex justify-center z-50 relative takeToMeBox flex">
+                    <div class="takeToMeHot absolute "></div>
+                    <div class="absolute w-80 h-32  flex items-center flex-col text-white font-bold"
+                      style="z-index: 51; transform: translate(-50%, -50%);top: 50%;left: 50%;">
+                      <div class="takeToMeText w-full text-center relative">LET ME WORK</div>
+                      <div class="takeToMeText2 w-full text-center tracking-wide relative" style="text-indent: 1rem">
+                        TALK
+                        TO
+                        ME
+                        ✍️</div>
+                    </div>
+                    <div class="lottie takeToMe w-80 h-80 z-50"></div>
                   </div>
-                  <div class="lottie takeToMe w-80 h-80 z-50"></div>
                 </div>
               </div>
             </div>
@@ -287,6 +307,7 @@
       </div>
     </div>
   </div>
+  <div class="caView  fixed top-0 z-10" style="pointer-events: none;"></div>
   <!-- <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.8.1/build/player/lottie.min.js" type="module"></script> -->
   <script src="./src/js/app.js" type="module"></script>
   <script src="./src/js/animeGsap.js" type="module"></script>

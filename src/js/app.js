@@ -2,8 +2,6 @@ import * as THREE from 'three';
 // import images from './images';
 import "./images.js";
 import { images } from "./images.js";
-import { blues } from "./images.js";
-import { bigImage } from "./images.js";
 import vertex from './shaders/vertex.glsl?raw';
 import fragment from './shaders/fragment.glsl?raw';
 
@@ -26,21 +24,9 @@ const textureEight = new THREE.TextureLoader().load(images.imageEight);
 const textureNine = new THREE.TextureLoader().load(images.imageNine);
 const textureTen = new THREE.TextureLoader().load(images.imageTen);
 
-// 加载 blues 图片
-// let bluesLoad = {} 
-// let loadBlues = Object.values(blues)
-// for (let i = 0; i < Object.keys(blues).length; i++) {
-//     // console.log( "blue"+`${i}`); 
-//     bluesLoad[`blue${i}`] = new THREE.TextureLoader().load(loadBlues[i]);
-// }
-
-// // 加载 homeBigImage 图片
-// const homeBigImage = new THREE.TextureLoader().load(bigImage.homeBigImage);
-
-
 class WebGL {
     constructor() {
-        this.container = document.querySelector('body');
+        this.container = document.querySelector('.caView');
         this.links = [...document.querySelectorAll('.inspirations ul li')];
         this.scene = new THREE.Scene();
         this.perspective = 100;

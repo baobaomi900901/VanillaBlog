@@ -1,9 +1,11 @@
 import {
     gsap
 } from 'gsap'
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+    ScrollTrigger
+} from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import lottie from 'lottie-web'; 
+import lottie from 'lottie-web';
 
 // bottom ball + text
 gsap.set(".takeToMeText", {
@@ -20,7 +22,7 @@ let mouseenterTrem = true
 let mouseoutTrem = false
 let takeToMeHot = document.querySelector('.takeToMeHot')
 
-const blueBall  = lottie.loadAnimation({
+const blueBall = lottie.loadAnimation({
     container: document.querySelector('.lottie'), //渲染位置
     renderer: 'svg', // 形式 svg or cavans
     loop: false, // 是否重复
@@ -29,7 +31,7 @@ const blueBall  = lottie.loadAnimation({
 })
 
 // 动画结束事件
-blueBall.onComplete = function(){
+blueBall.onComplete = function () {
     blueBall.stop() // 停止动画
     console.log("onComplete");
 }
@@ -75,7 +77,7 @@ takeToMeHot.addEventListener('mouseout', function () {
     mouseoutTrem = false
 })
 
-
+// 起始和page1
 setTimeout(() => {
     (function moveHidden() {
         let StartAnimation = document.querySelector('.StartAnimation')
@@ -93,8 +95,8 @@ setTimeout(() => {
 
 // 起始动画
 // function a() {
-    let SATextHeadEnt = EnterAnime("SATextHead",0.2)
-    let SATextFooterEnt = EnterAnime("SATextFooter",0.2)
+    let SATextHeadEnt = EnterAnime("SATextHead",0.4)
+    let SATextFooterEnt = EnterAnime("SATextFooter",0.4)
     let t1Ent = EnterAnime("t1",0.2,null,0.4)
     let t1Out = outAnime("t1",0.2,null,0.4)
     let t2Ent = EnterAnime("t2",0.2,null,0.4)
@@ -115,8 +117,8 @@ setTimeout(() => {
     });
 
     StartPageLine.add(SATextHeadEnt);
-    StartPageLine.add(SATextFooterEnt, "-=0.8");
-    StartPageLine.add(t1Ent, "-=0.5");
+    StartPageLine.add(SATextFooterEnt,0.2);
+    StartPageLine.add(t1Ent);
     StartPageLine.add(t1Out);
     StartPageLine.add(t2Ent);
     StartPageLine.add(t2Out);
@@ -129,7 +131,7 @@ setTimeout(() => {
     StartPageLine.add(t6Ent);
     StartPageLine.add(t6Out);
     StartPageLine.add(SATextHeadOut);
-    StartPageLine.add(SATextFooterOut, "-=0.5");
+    StartPageLine.add(SATextFooterOut);
     StartPageLine.to(".StartPage", {
         opacity: 0,
         duration: 2,
@@ -290,6 +292,7 @@ setTimeout(() => {
         delay: 1,
         onComplete:function () {
             console.log('homePage1');
+            document.querySelector('body').classList.remove('overflow-hidden')
         }
     });
 
@@ -391,24 +394,330 @@ function outAnime(el, duration = 0.5, stagger = 0.01, delayTime = 0) {
     }
 }
 
-// navmenu[0].style.color = "red"
-// navmenu.forEach(element => {
-//     element.style.color = "red"
-// });
 
 
-// 滚轴
-// gsap.to(".navBar",{
-//     // x: 400,
-//     // rotation: 360,
+// 内容滚轴
+
+
+// 内容文字入场动画
+function contentEnterAnime(el, durationTime = 0.3, staggerTime = 0.01, delayTime = 0, yValue = 10) {
+    // 文字类, 动画中使用
+    let spanclass = `${el}Span`
+    textSplit2(el, spanclass)
+    // 动画
+    let anime = gsap.fromTo(
+        `.${spanclass}`, {
+            transformOrigin: 'bottom  center',
+            y: yValue,
+            opacity: 0,
+            rotateX: 90,
+        }, {
+            y: 0,
+            duration: durationTime,
+            stagger: staggerTime,
+            delay: delayTime,
+            opacity: 1,
+            rotateX: 0,
+            ease: "none",
+            // ease: "elastic.out(1, 0.75)"
+        }
+    );
+    return anime
+}
+
+// 提取文字拆分
+function textSplit2(el, sc) {
+    let element = document.getElementById(el)
+    let elArr = [...element.textContent]
+    // 提取文字
+    elArr.reduce(function (pre, cur, index) {
+        if (pre === index) {
+            element.innerHTML = '';
+        }
+        // 创建一个 span
+        let span = document.createElement('span');
+        // span 内容等于 cur
+        span.innerHTML = cur;
+        // 处理空格
+        if (cur == " ") {
+            span.innerHTML = `&nbsp;`
+        } else {
+            span.innerHTML = cur;
+        }
+        element.appendChild(span).classList.add(sc, 'inline-block');
+    }, 0);
+}
+
+let contentOne1 = contentEnterAnime("el-content-one-1")
+let contentOne2 = contentEnterAnime("el-content-one-2")
+let contentOne3 = contentEnterAnime("el-content-one-3", 0.2)
+let contentOne4 = contentEnterAnime("el-content-one-4", 0.2)
+let contentOne5 = contentEnterAnime("el-content-one-5", 0.2)
+
+var contentOneTimeLine = gsap.timeline({
+    scrollTrigger: {
+        // markers: "true", // 启用标尺
+        trigger: '#aboutMeBox',
+        start: "start center",
+        // end: "+=400",
+        toggleActions: 'play play resume pause', //restart
+    }
+});
+
+contentOneTimeLine.add(contentOne1)
+contentOneTimeLine.add(contentOne2)
+contentOneTimeLine.add(contentOne3, "-=0.5")
+contentOneTimeLine.add(contentOne4, "-=0.6")
+contentOneTimeLine.add(contentOne5, "-=0.6")
+
+// let twoTest = gsap.fromTo("#el-content-two", {
+//     x: -40,
+//     opacity: 0
+// }, {
+//     x: 0,
+//     opacity: 1
+// })
+
+let contentTwo1 = contentEnterAnime("el-content-two-1")
+let contentTwo2 = contentEnterAnime("el-content-two-2")
+
+let contentTwo3 = contentEnterAnime("el-content-two-3")
+let contentTwo4 = contentEnterAnime("el-content-two-4")
+let contentTwo5 = contentLineAnime("el-content-two-5")
+
+let contentTwo6 = contentEnterAnime("el-content-two-6")
+let contentTwo7 = contentEnterAnime("el-content-two-7")
+let contentTwo8 = contentLineAnime("el-content-two-8")
+
+let contentTwo9 = contentEnterAnime("el-content-two-9")
+let contentTwo10 = contentEnterAnime("el-content-two-10")
+let contentTwo11 = contentLineAnime("el-content-two-11")
+
+let contentTwo12 = contentEnterAnime("el-content-two-12")
+let contentTwo13 = contentEnterAnime("el-content-two-13")
+let contentTwo14 = contentEnterAnime("el-content-two-14")
+let contentTwo15 = contentEnterAnime("el-content-two-15")
+let contentTwo16 = contentEnterAnime("el-content-two-16")
+let contentTwo17 = contentEnterAnime("el-content-two-17")
+
+let contentTwo18 = contentEnterAnime("el-content-two-18")
+
+
+
+var contentTwoTimeLine = gsap.timeline({
+    // delay: 1,
+    scrollTrigger: {
+        // markers: "true", // 启用标尺
+        trigger: '#aboutMeBox',
+        start: "start center",
+        // end: "+=400",
+        toggleActions: 'play play resume pause', //restart
+    },
+});
+
+contentTwoTimeLine.add(contentTwo1)
+contentTwoTimeLine.add(contentTwo2, 0.2)
+
+contentTwoTimeLine.add(contentTwo3, 0.3)
+contentTwoTimeLine.add(contentTwo4, 0.6)
+contentTwoTimeLine.add(contentTwo5, 0.4)
+
+contentTwoTimeLine.add(contentTwo6, 0.5)
+contentTwoTimeLine.add(contentTwo7, 0.8)
+contentTwoTimeLine.add(contentTwo8, 0.6)
+
+contentTwoTimeLine.add(contentTwo9, 0.7)
+contentTwoTimeLine.add(contentTwo10, 1)
+contentTwoTimeLine.add(contentTwo11, 0.8)
+
+contentTwoTimeLine.add(contentTwo12, 0.8)
+contentTwoTimeLine.add(contentTwo13, 1)
+contentTwoTimeLine.add(contentTwo14, 1.2)
+contentTwoTimeLine.add(contentTwo15, 1.4)
+contentTwoTimeLine.add(contentTwo16, 1.6)
+contentTwoTimeLine.add(contentTwo17, 1.8)
+contentTwoTimeLine.add(contentTwo18, 1.8)
+
+
+let contentThree1 = contentEnterAnime("el-content-three-1")
+let contentThree2 = contentEnterAnime("el-content-three-2")
+let contentThree3 = contentEnterAnime("el-content-three-3")
+let contentThree4 = contentEnterAnime("el-content-three-4")
+
+let contentThree5 = contentEnterAnime("el-content-three-5")
+let contentThree6 = contentEnterAnime("el-content-three-6")
+let contentThree7 = contentLineAnime("el-content-three-7")
+
+let contentThree8 = contentEnterAnime("el-content-three-8")
+let contentThree9 = contentEnterAnime("el-content-three-9")
+let contentThree10 = contentLineAnime("el-content-three-10")
+
+let contentThree11 = contentEnterAnime("el-content-three-11")
+let contentThree12 = contentEnterAnime("el-content-three-12")
+let contentThree13 = contentLineAnime("el-content-three-13")
+
+let contentThree14 = contentEnterAnime("el-content-three-14")
+let contentThree15 = contentEnterAnime("el-content-three-15")
+let contentThree16 = contentLineAnime("el-content-three-16")
+
+let contentThree17 = contentEnterAnime("el-content-three-17")
+let contentThree18 = contentEnterAnime("el-content-three-18")
+let contentThree19 = contentLineAnime("el-content-three-19")
+
+
+var contentThreeTimeLine = gsap.timeline({
+    // delay: 0.5,
+    scrollTrigger: {
+        // markers: "true", // 启用标尺
+        trigger: '#el-content-two',
+        start: "top center",
+        // end: "+=400",
+        toggleActions: 'play play play pause', //restart
+    }
+});
+
+
+contentThreeTimeLine.add(contentThree1)
+contentThreeTimeLine.add(contentThree2, 0.2)
+contentThreeTimeLine.add(contentThree3, 0.4)
+contentThreeTimeLine.add(contentThree4, 0.6)
+
+contentThreeTimeLine.add(contentThree5, 0.6)
+contentThreeTimeLine.add(contentThree6, 0.9)
+contentThreeTimeLine.add(contentThree7, 0.7)
+
+contentThreeTimeLine.add(contentThree8, 0.8)
+contentThreeTimeLine.add(contentThree9, 1.1)
+contentThreeTimeLine.add(contentThree10, 1.3)
+
+contentThreeTimeLine.add(contentThree11, 1)
+contentThreeTimeLine.add(contentThree12, 1.3)
+contentThreeTimeLine.add(contentThree13, 1.5)
+
+contentThreeTimeLine.add(contentThree14, 1.2)
+contentThreeTimeLine.add(contentThree15, 1.5)
+contentThreeTimeLine.add(contentThree16, 1.7)
+
+contentThreeTimeLine.add(contentThree17, 1.4)
+contentThreeTimeLine.add(contentThree18, 1.7)
+contentThreeTimeLine.add(contentThree19, 1.9)
+
+
+
+let contentFour1 = contentEnterAnime("el-content-four-1")
+let contentFour2 = contentEnterAnime("el-content-four-2")
+let contentFour3 = contentEnterAnime("el-content-four-3")
+
+let contentFour4 = contentEnterAnime("el-content-four-4")
+let contentFour5 = contentEnterAnime("el-content-four-5")
+let contentFour6 = contentLineAnime("el-content-four-6")
+
+let contentFour7 = contentEnterAnime("el-content-four-7")
+let contentFour8 = contentEnterAnime("el-content-four-8")
+let contentFour9 = contentLineAnime("el-content-four-9")
+
+let contentFour10 = contentEnterAnime("el-content-four-10")
+let contentFour11 = contentEnterAnime("el-content-four-11")
+let contentFour12 = contentLineAnime("el-content-four-12")
+
+let contentFour13 = contentEnterAnime("el-content-four-13")
+let contentFour14 = contentEnterAnime("el-content-four-14")
+let contentFour15 = contentLineAnime("el-content-four-15")
+
+let contentFour16 = contentEnterAnime("el-content-four-16")
+let contentFour17 = contentEnterAnime("el-content-four-17")
+let contentFour18 = contentLineAnime("el-content-four-18")
+
+let contentFour19 = contentEnterAnime("el-content-four-19")
+
+let blueBallBox = gsap.fromTo('#blueBallBox',{
+    y:40,
+    opacity:0
+},{
+    y:0,
+    opacity:1
+})
+
+var contentFourTimeLine = gsap.timeline({
+    // delay: 0.5,
+    scrollTrigger: {
+        // markers: "true", // 启用标尺
+        trigger: '#el-content-three',
+        start: "top center",
+        // end: "+=400",
+        toggleActions: 'play play play pause', //restart
+    }
+});
+
+
+contentFourTimeLine.add(contentFour1)
+contentFourTimeLine.add(contentFour2, 0.2)
+contentFourTimeLine.add(contentFour3, 0.4)
+
+contentFourTimeLine.add(contentFour4, 0.6)
+contentFourTimeLine.add(contentFour5, 0.9)
+contentFourTimeLine.add(contentFour6, 1.1)
+
+contentFourTimeLine.add(contentFour7, 0.8)
+contentFourTimeLine.add(contentFour8, 1.1)
+contentFourTimeLine.add(contentFour9, 1.3)
+
+contentFourTimeLine.add(contentFour10, 1)
+contentFourTimeLine.add(contentFour11, 1.3)
+contentFourTimeLine.add(contentFour12, 1.5)
+
+contentFourTimeLine.add(contentFour13, 1.2)
+contentFourTimeLine.add(contentFour14, 1.5)
+contentFourTimeLine.add(contentFour15, 1.7)
+
+contentFourTimeLine.add(contentFour16, 1.4)
+contentFourTimeLine.add(contentFour17, 1.7)
+contentFourTimeLine.add(contentFour18, 1.9)
+
+contentFourTimeLine.add(contentFour19, 1.6)
+contentFourTimeLine.add(blueBallBox, 2)
+
+// menu
+
+
+let testEl = document.getElementById('el-content-three-5')
+
+testEl.addEventListener('mouseenter',function() {
+    console.log("mouseenter");
+})
+
+
+function contentLineAnime(el) {
+    let element = document.getElementById(el)
+    // console.log("el->", element);
+    let anime = gsap.fromTo(element, {
+        transformOrigin: 'left',
+        scaleX: 0,
+        // opacity: 0
+    }, {
+        scaleX: 1,
+        // opacity: 1,
+        duration: 0.3,
+    })
+    return anime
+}
+
+// document.getElementById()
+// contentLineAnime("el-content-two-5")
+
+// gsap.fromTo(".el-content-one", {
+//     x: -40,
+//     opacity: 0
+// }, {
+//     x: 0,
+//     opacity: 1,
 //     duration: 1,
-//     color: "#020202",
-//     // backgroundColor: "blue",
+//     stagger: 0.1,
 //     scrollTrigger: {
 //         markers: "true", // 启用标尺
-//         trigger: '.b',
+//         trigger: '#aboutMeBox',
 //         start: "start center",
-//         // end: "+=200",
-//         toggleActions: 'play pause resume pause', //restart
+//         // end: "+=400",
+//         toggleActions: 'play play resume pause', //restart
 //     }
 // })

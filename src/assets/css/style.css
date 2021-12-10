@@ -130,23 +130,25 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 20;
 }
 
 .inspirations ul li {
-  @apply flex justify-between items-center border-b pb-8 mb-8;
+  /* @apply flex justify-between items-center border-b pb-8 mb-8;
   position: relative;
   cursor: pointer;
   transition: 1s;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.15); */
+  @apply relative flex items-center justify-between pb-8 mb-8;
 }
 
-.inspirations ul li span:nth-child(1) {
+.line{
+  @apply w-full border-b absolute bottom-0;
+  border-color: rgba(0, 0, 0, .08);
+}
+
+.inspirations ul li .content-title {
   @apply text-4xl font-bold
-}
-
-.inspirations>ul>li:hover .inspirations li {
-  opacity: 0.1;
 }
 
 
@@ -155,6 +157,7 @@ canvas {
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: 10;
 }
 
 .takeToMeHot {

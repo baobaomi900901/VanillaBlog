@@ -32225,30 +32225,35 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 20;
 }
 
 .inspirations ul li {
+  /* @apply flex justify-between items-center border-b pb-8 mb-8;
+  position: relative;
+  cursor: pointer;
+  transition: 1s;
+  border-color: rgba(0, 0, 0, 0.15); */
+  position: relative;
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom-width: 1px;
   padding-bottom: 2rem;
-  position: relative;
-  cursor: pointer;
-  transition: 1s;
-  border-color: rgba(0, 0, 0, 0.15);
 }
 
-.inspirations ul li span:nth-child(1) {
+.line{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  border-bottom-width: 1px;
+  border-color: rgba(0, 0, 0, .08);
+}
+
+.inspirations ul li .content-title {
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 700
-}
-
-.inspirations>ul>li:hover .inspirations li {
-  opacity: 0.1;
 }
 
 canvas {
@@ -32256,6 +32261,7 @@ canvas {
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: 10;
 }
 
 .takeToMeHot {
